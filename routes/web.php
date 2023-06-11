@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\TeamController as AdminTeamController;
 use App\Http\Controllers\Admin\TeamExpertController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\Auth\UserEmailVerifyController;
 use App\Http\Controllers\Panel\AccountController;
 use App\Http\Controllers\Panel\ChallengeController;
@@ -45,11 +46,12 @@ Route::prefix('/')->group(function(){
     Route::get('/about-us',[SiteController::class,'aboutUs'])->name('site.about-us');
     Route::get('/contact-us',[SiteController::class,'contactUs'])->name('site.contact-us');
 
-    Route::prefix('/auth')->group(function(){
+    Route::prefix('auth')->group(function(){
         Route::get('reset-password/{token}', [PasswordResetController::class, 'index'])->name('site.auth.password-reset.index');
         Route::get('verify-email', [UserEmailVerifyController::class, 'index'])->middleware(['auth'])->name('site.auth.verifyemail.index');
         Route::get('complete-info', [UserCompleteInfoController::class, 'index'])->middleware(['auth'])->name('site.auth.complete-info.index');
-
+        Route::get('google/redirect',[GoogleAuthController::class,'redirect'])->name('google.auth.redirect');
+        Route::get('google/callback',[GoogleAuthController::class,'callback'])->name('google.auth.callback');
     });
 });
 

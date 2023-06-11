@@ -134,14 +134,14 @@
 
                     <hr class="my-5">
 
-                    <button type="submit" class="w-full p-4 text-black bg-white shadow-md rounded-md flex items-center">
+                    <a href="{{route('google.auth.redirect')}}" class="w-full p-4 text-black bg-white shadow-md rounded-md flex items-center justify-center gap-3">
                         <img src="{{ asset('assets/images/google.png') }}" alt="" srcset="" class="w-6">
 
-                        <span class="w-full">
+                        <span class="">
                             ورود با گوگل
                         </span>
 
-                    </button>
+                    </a>
                 </div>
 
                 </div>

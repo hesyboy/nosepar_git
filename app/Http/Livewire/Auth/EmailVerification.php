@@ -48,7 +48,7 @@ class EmailVerification extends Component
 
         // Mail::to($this->user->email)->send(new MailEmailVerification($this->user));
 
-        // Mail::to($this->user->email)->send(new MailEmailVerification());
+        Mail::to($this->user->email)->send(new MailEmailVerification());
 
 
         // RegisterEmailVerification::dispatch();
