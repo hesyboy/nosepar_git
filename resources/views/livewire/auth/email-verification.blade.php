@@ -111,10 +111,10 @@
             </div>
 
             <div class="flex justify-between p-2 text-base">
-                <span>
+                {{-- <span>
 
                     {{ $code }}
-                </span>
+                </span> --}}
                 {{-- <span class="text-blue-700" x-data>
 
                     @if ($timer>=1)

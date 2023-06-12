@@ -416,7 +416,8 @@
 
                                             <td class="px-3 py-3">
                                                 <div class="flex justify-end gap-3 font-iranyekan-regular ">
-                                                    <a href="{{route('panel.teams.show',$myTeam->id)}}" class="flex gap-3 px-4 py-2 text-xs text-white bg-gray-800 rounded-md cursor-pointer hover:bg-gray-900">
+                                                    <a href="{{route('panel.teams.show',$myTeam->id)}}"
+                                                         class="w-28 flex justify-center  gap-3 px-4 py-2 text-xs text-white bg-blue-600 rounded-md cursor-pointer hover:bg-blue-700">
                                                         <span>
                                                             مشاهده تیم
                                                         </span>
@@ -441,22 +442,23 @@
                                                     </a>
                                                 @endif --}}
 
-                                                <div class="px-4 py-2 text-xs text-white bg-blue-600 rounded-md cursor-pointer hover:bg-blue-700" x-data="{selected:false}">
+                                                <div class="">
                                                     @if ($myTeam->teamMembers->where('user_id','=',auth()->id())->first())
                                                         <div class="flex gap-3 items-center">
-                                                            <a  class="flex gap-3 " @click="selected=true">
+                                                            <a  class="w-28 flex justify-center gap-3 px-4 py-2 text-xs text-white bg-red-800 rounded-md cursor-pointer hover:bg-red-900">
                                                                 <span wire:click="exitTeam({{$myTeam->id}})">
                                                                     خروج از تیم
                                                                 </span>
                                                             </a>
-                                                            <div  x-show="selected" x-cloak class="flex">
+                                                            {{-- <div  x-show="selected" x-cloak class="flex">
                                                                 <span  class=" flex items-center justify-center  animate-spin" >
                                                                     <i class="fi fi-rr-spinner text-base flex " ></i>
                                                                 </span>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     @else
-                                                        <a wire:click="enterTeam({{$myTeam->id}})" class="flex gap-3 ">
+                                                        <a wire:click="enterTeam({{$myTeam->id}})"
+                                                            class="w-28 flex justify-center gap-3 px-4 py-2 text-xs text-white bg-green-800 rounded-md cursor-pointer hover:bg-green-900">
                                                             <span>
                                                                 عضویت در تیم
                                                             </span>
@@ -568,7 +570,8 @@
                                             </td>
                                             <td class="px-3 py-3">
                                                 <div class="flex justify-end gap-3 font-iranyekan-regular items-center ">
-                                                    <a href="{{route('panel.profile.show',$i->code)}}" class="flex gap-3 px-4 py-2 text-xs text-white bg-gray-800 rounded-md cursor-pointer hover:bg-gray-900">
+                                                    <a href="{{route('panel.profile.show',$i->code)}}"
+                                                        class="w-32 flex justify-center  gap-3 px-4 py-2 text-xs text-white bg-blue-600 rounded-md cursor-pointer hover:bg-blue-700">
                                                         <span>
                                                             مشاهده پروفایل
                                                         </span>
@@ -582,17 +585,19 @@
                                                         $following = App\Models\UserFollowing::where('user_id',auth()->user()->id)->where('following_id',$i->id)->get()->first()
                                                     @endphp
                                                     @if ($following==true)
-                                                        <a wire:click="follow()" class="flex items-center gap-3 py-1 px-4 text-xs text-white bg-emerald-600 hover:bg-emerald-700 rounded-md cursor-pointer ">
-                                                            <img class="w-6" src="{{asset('assets/images/icons_add_user_male.svg')}}" alt="">
+                                                        <a wire:click="follow({{$i->id}})"
+                                                        class="w-28 flex justify-center  gap-3 px-4 py-2 text-xs text-white bg-red-800 rounded-md cursor-pointer hover:bg-red-900">
+                                                            {{-- <img class="w-4" src="{{asset('assets/images/icons_add_user_male.svg')}}" alt=""> --}}
                                                             <span>
-                                                                پیوند زده شده
+                                                                قطع ارتباط
                                                             </span>
                                                         </a>
                                                     @elseif($following==false)
-                                                        <a wire:click="follow()" class="flex items-center gap-3 py-1 px-4 text-xs text-white bg-blue-600 rounded-md cursor-pointer hover:bg-blue-700">
-                                                            <img class="w-6" src="{{asset('assets/images/icons_add_user_male.svg')}}" alt="">
+                                                        <a wire:click="follow({{$i->id}})"
+                                                        class="w-28 flex justify-center  gap-3 px-4 py-2 text-xs text-white bg-green-800 rounded-md cursor-pointer hover:bg-green-900">
+                                                            {{-- <img class="w-4" src="{{asset('assets/images/icons_add_user_male.svg')}}" alt=""> --}}
                                                             <span>
-                                                                پیوند
+                                                                پیوند جدید
                                                             </span>
                                                         </a>
                                                     @endif

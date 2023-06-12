@@ -141,8 +141,15 @@
                         <select name="" id="" class="w-full p-3 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
                         wire:model.debounce="contact_way">
                             <option value=""></option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
+                            <option value="0">
+                                جستجو در گوگل
+                            </option>
+                            <option value="1">
+                                شبکه های اجتماعی
+                            </option>
+                            <option value="2">
+                                جلسات مشاوره ای
+                            </option>
                         </select>
 
                         <span class="absolute top-4 left-4">

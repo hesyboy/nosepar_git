@@ -80,6 +80,33 @@ class IndexTeam extends Component
     }
 
 
+    public function follow($id){
+        $following1=UserFollowing::where('user_id',Auth::id())->where('following_id',$id)->get()->first();
+        if($following1){
+            $following=true;
+        }
+        else{
+            $following=false;
+        }
+
+        if($following==false){
+            $following=new UserFollowing();
+            $following->user_id=Auth::id();
+            $following->following_id = $id;
+            $following->save();
+            $following=true;
+            session()->flash('success', 'پیوند زده شد');
+
+        }
+        elseif($following==true){
+            $following1=UserFollowing::where('user_id',Auth::id())->where('following_id',$id)->get()->first();
+            $following1->delete();
+            $following=false;
+            session()->flash('danger', 'پیوند قطع شد');
+        }
+
+    }
+
 
     public function render()
     {
@@ -92,6 +119,12 @@ class IndexTeam extends Component
             $this->allTeams=Team::where('name','like','%'.$this->search_team.'%')->get();
         else
             $this->allTeams=Team::all();
+
+
+        $this->userFollowings=UserFollowing::where('user_id',Auth::id())->get();
+
+
+
 
         if($this->search_user != null)
             $this->allUsers=User::where('first_name','like','%'.$this->search_user.'%')

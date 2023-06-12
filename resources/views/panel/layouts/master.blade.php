@@ -9,7 +9,7 @@
 
         {{-- @mouseover="menu=true" @mouseover.away="menu=false" --}}
 
-        <div class="flex w-full" x-data="{menu:true}">
+        <div class="flex w-full" x-data="{menu:false}">
             <div class="" :class="menu ? 'w-[350px]' : 'w-[80px]' " >
                 <div class="fixed top-0 right-0 h-screen bg-white" :class="menu ? 'w-[300px]' : 'w-[80px]' ">
                     @include('panel.layouts.sidebar')

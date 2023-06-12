@@ -9,16 +9,16 @@
 <body>
     <div >
         <h2>
-            No Separ | Email Verification
+            No Separ | Email Verification2
         </h2>
     </div>
-    <div style="background-color: royalblue;color:white">
+    <div style="background-color: royalblue;color:white; padding:5px;border-radius:5px;text-align:center">
         <h3>
             <span>
                 Your Code is :
             </span>
             <span>
-                {{ $user }}
+                {{ $code }}
             </span>
         </h3>
     </div>

@@ -2,26 +2,26 @@
 
 namespace App\Mail;
 
-use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Auth;
 
-class EmailVerification extends Mailable implements ShouldQueue
+class Welcome extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    public $code;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($code)
+
+    public $user;
+
+    public function __construct($user)
     {
-        $this->code=$code;
+        $this->user = $user;
     }
 
     /**
@@ -31,7 +31,7 @@ class EmailVerification extends Mailable implements ShouldQueue
      */
     public function build()
     {
-    return $this->from('noreply@nosepar.ir', 'نوسپار | کد تاییدیه')
-                ->view('emails.email-verification');
+        return $this->from('noreply@nosepar.ir', 'نوسپار  ')
+        ->view('mail.welcome-email');
     }
 }
