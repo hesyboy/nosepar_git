@@ -1,8 +1,8 @@
-<div class="flex items-center justify-between w-full h-16 px-5 bg-white shadow">
+<div class="flex items-center justify-between w-full h-24 md:h-16 px-5 bg-white shadow">
 
 
 
-    <div class="flex items-start justify-between w-full py-3 md:items-center">
+    <div class="w-full flex flex-col gap-3 md:flex-row items-center justify-between py-3 md:items-center">
 
 
         <div>
@@ -19,7 +19,7 @@
                 <span>
                     کوین نوسپار دارید!
                 </span>
-                <span class="mx-2">
+                <span class="mx-2 hidden md:flex">
                     <img src="{{asset('assets/images/happy.svg')}}" alt="">
                 </span>
 
@@ -32,25 +32,7 @@
                 <a @click="toggle=!toggle" class="flex items-center gap-1 px-2 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-100">
                     <img src="{{asset('assets/images/panel-header-notification.png')}}" alt="">
                 </a>
-                {{-- <div x-show="toggle" x-cloak class="absolute left-0 px-2 mt-1 bg-white rounded-md shadow-lg top-14 w-60">
-                    <ul class="flex flex-col">
-                        <li class="px-2 py-4 border-b-2 border-slate-100">
-                            <a class="text-base">
-                                پروفایل من
-                            </a>
-                        </li>
-                        <li class="px-2 py-4 border-b-2 border-slate-100">
-                            <a class="text-base">
-                                تنظیمات
-                            </a>
-                        </li>
-                        <li class="px-2 py-4">
-                            <a class="text-base text-red-600">
-                                خروج
-                            </a>
-                        </li>
-                    </ul>
-                </div> --}}
+
             </div>
 
 
@@ -58,25 +40,7 @@
                 <a @click="toggle=!toggle" class="flex items-center gap-1 px-2 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-100">
                     <img src="{{asset('assets/images/panel-header-message.png')}}" alt="">
                 </a>
-                {{-- <div x-show="toggle" x-cloak class="absolute left-0 px-2 mt-1 bg-white rounded-md shadow-lg top-14 w-60">
-                    <ul class="flex flex-col">
-                        <li class="px-2 py-4 border-b-2 border-slate-100">
-                            <a class="text-base">
-                                پروفایل من
-                            </a>
-                        </li>
-                        <li class="px-2 py-4 border-b-2 border-slate-100">
-                            <a class="text-base">
-                                تنظیمات
-                            </a>
-                        </li>
-                        <li class="px-2 py-4">
-                            <a class="text-base text-red-600">
-                                خروج
-                            </a>
-                        </li>
-                    </ul>
-                </div> --}}
+
             </div>
 
             <div class="relative" x-data="{'toggle':false}" @click.away="toggle=false">
@@ -174,8 +138,8 @@
 
 </div>
 
-<div class="px-8 py-3 pt-5">
-    <div class="flex items-center justify-between p-3 text-blue-800 bg-blue-100 rounded-md">
+<div class="px-5 py-3 pt-5">
+    <div class="flex flex-col md:flex-row gap-3 items-center justify-between p-3 text-blue-800 bg-blue-100 rounded-md">
         <div class="text-base font-iranyekan-bold">
             برای فعال سازی حساب نوسپار، پروفایل خود را تکمیل کنید!
         </div>

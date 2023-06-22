@@ -10,10 +10,10 @@
 
         <div class="col-span-12 bg-white rounded-md shadow">
             <div class="flex items-center justify-between p-3 border-b font-iranyekan-bold" x-data="{modal:false}">
-                <span class="text-xl">
+                <span class="text-lg">
                     چالش های شرکت شده توسط من
                 </span>
-                <div class="px-4 py-2 text-base text-blue-800 bg-blue-100 rounded-md cursor-pointer hover:bg-blue-200" @click="modal=true">
+                <div class="px-4 py-2 text-sm text-blue-800 bg-blue-100 rounded-md cursor-pointer hover:bg-blue-200" @click="modal=true">
                     <span>
                         ایجاد چالش جدید
                     </span>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="z-0 grid grid-cols-4 gap-5 p-3 pb-5">
+            <div class="z-0 grid grid-cols-2 gap-5 p-3 pb-5">
 
                 @foreach ([1,2,3,4] as $item)
                     @livewire('panel.challenge.main-card')
@@ -35,11 +35,11 @@
 
         <div  class="p-5 mt-3 bg-white rounded-md shadow ">
             <div>
-                <span class="text-xl font-bold ">
+                <span class="text-lg font-bold ">
                     همه چالش ها
                 </span>
             </div>
-            <div class="grid grid-cols-4 gap-5 pb-5 text-lg text-slate-300">
+            {{-- <div class="grid grid-cols-4 gap-5 pb-5 text-base text-slate-300">
 
                 <div class="px-3 py-4 border rounded-lg">
                     جستجو
@@ -53,7 +53,7 @@
                 <div class="px-3 py-4 border rounded-lg">
                     فیلتر براساس دسته ‌بندی
                 </div>
-            </div>
+            </div> --}}
             <div>
                 <div class="z-0 grid grid-cols-4 gap-5">
 

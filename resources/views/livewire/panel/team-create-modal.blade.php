@@ -1,5 +1,5 @@
 <div>
-    <div>
+    <div class="">
 
         @if ($stepper==0)
             <div  class=" flex flex-col justify-between gap-5 text-xs">
@@ -18,7 +18,7 @@
                     </div>
                     <form action="" class="flex flex-col gap-3">
 
-                        <div class="grid grid-cols-2 gap-3">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                             <div class="flex flex-col gap-2">
                                 <span>نام تیم </span>
                                 <input type="text" wire:model="name" class="w-full p-3 rounded-md border border-gray-400 outline-blue-600 text-xs text-right"
@@ -37,7 +37,7 @@
                             </div>
                         </div>
 
-                        <div class="flex gap-5 items-center justify-between">
+                        <div class="flex flex-col md:flex-row gap-5 items-center justify-between">
 
                             <div>
                                 <div class="flex flex-col gap-2">
@@ -88,7 +88,7 @@
 
                     </div>
                     <div class="flex gap-3 items-center mt-3">
-                        <div class="px-6 py-3 font-iranyekan-bold text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer" @click="modal=false">
+                        <div class="px-6 py-3 font-iranyekan-bold text-red-800 bg-red-100 hover:bg-red-200 rounded-md cursor-pointer" @click="modal=false">
                             بیخیال
                         </div>
                         <div wire:click="step1" class="px-6 py-3 font-iranyekan-regular text-white bg-blue-600 hover:bg-blue-700 rounded-md cursor-pointer">
@@ -144,14 +144,14 @@
 
                     </form>
                 </div>
-                <div class="flex justify-between items-center">
+                <div class="flex flex-col md:flex-row justify-between items-center">
                     <div>
                         <div wire:click="previous_page" class="px-6 py-3 font-iranyekan-bold text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer">
                             مرحله قبل
                         </div>
                     </div>
                     <div class="flex gap-3 items-center mt-3">
-                        <div class="px-6 py-3 font-iranyekan-bold text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer" @click="modal=false">
+                        <div class="px-6 py-3 font-iranyekan-bold text-red-800 bg-red-100 hover:bg-red-200 rounded-md cursor-pointer" @click="modal=false">
                             بیخیال
                         </div>
                         <div wire:click="step2" class="px-6 py-3 font-iranyekan-regular text-white bg-blue-600 hover:bg-blue-700 rounded-md cursor-pointer">
@@ -220,7 +220,7 @@
                                         دعوت با ایمیل
                                     </span>
 
-                                    <div class="w-full flex gap-3 items-center">
+                                    <div class="w-full flex flex-col md:flex-row gap-3 items-center">
                                         <input type="text" wire:model="email_invite" placeholder="ایمیل گیرنده را وارد کنید" class="w-full px-3 py-3 rounded-md border border-gray-400 outline-blue-600 text-xs text-right">
                                         <span wire:click="addEmailInvite()" class="w-48 py-3 px-3 font-iranyekan-regular text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer text-xs text-center">
                                             افزودن ایمیل
@@ -249,14 +249,14 @@
 
                         </div>
                     </div>
-                    <div class="flex justify-between items-center text-xs">
+                    <div class="flex flex-col md:flex-row justify-between items-center text-xs">
                         <div>
                             <div wire:click="previous_page" class="px-6 py-3 font-iranyekan-bold text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer">
                                 مرحله قبل
                             </div>
                         </div>
                         <div class="flex gap-3 items-center mt-3">
-                            <div class="px-6 py-3 font-iranyekan-bold text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer" @click="modal=false">
+                            <div class="px-6 py-3 font-iranyekan-bold text-red-800 bg-red-100 hover:bg-red-200 rounded-md cursor-pointer" @click="modal=false">
                                 بیخیال
                             </div>
                             <div wire:click="step3" class="px-6 py-3 font-iranyekan-regular text-white bg-blue-600 hover:bg-blue-700 rounded-md cursor-pointer">
@@ -335,15 +335,7 @@
 
                                 @endforeach
                             </div>
-                            {{-- <div class="flex gap-3">
-                                @foreach ($userMemberSelector as $userselected)
-                                    @if ($userselected)
-                                        <div class="py-2 px-3 rounded text-xs bg-blue-100 text-blue-700">
-                                            {{App\Models\User::find($userselected)->first_name}} {{App\Models\User::find($userselected)->last_name}}
-                                        </div>
-                                    @endif
-                                @endforeach
-                            </div> --}}
+
                         </div>
 
                         <div class="text-xs mt-5 flex flex-col gap-3">
@@ -374,14 +366,14 @@
                     </div>
 
                 </div>
-                <div class="flex justify-between items-center text-xs">
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs">
                     <div>
                         <div wire:click="previous_page" class="px-6 py-3 font-iranyekan-regular text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer">
                             مرحله قبل
                         </div>
                     </div>
                     <div class="flex gap-3 items-center mt-3">
-                        <div class="px-6 py-3 font-iranyekan-regular text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer" @click="modal=false">
+                        <div class="px-6 py-3 font-iranyekan-regular text-red-800 bg-red-100 hover:bg-red-200 rounded-md cursor-pointer" @click="modal=false">
                             بیخیال
                         </div>
                         <div wire:click="save" class="px-6 py-3 font-iranyekan-regular text-white bg-blue-600 hover:bg-blue-700 rounded-md cursor-pointer">

@@ -1,7 +1,7 @@
 <div>
 
-    <div class="fixed left-0 flex items-start justify-center w-screen top-1 z-50">
-        <div class="w-[500px]">
+    <div class="fixed left-0 flex items-center justify-center top-1 z-50 p-2 w-[400px]">
+        <div class="">
             @if (session('success'))
                 <div class="" >
                     <div class=""  >
@@ -57,7 +57,7 @@
 
         <div class="grid grid-cols-12 gap-5">
 
-            <div class="col-span-8 bg-white rounded-md shadow relative h-[370px]">
+            <div class="col-span-12 md:col-span-8 bg-white rounded-md shadow relative h-[370px]">
                 <div class="flex items-center justify-between p-3 border-b font-iranyekan-bold " x-data="{modal:false}">
                     <span class="text-lg ">
                         تیم های من
@@ -68,7 +68,7 @@
                         </span>
                     </div>
                     <div class="fixed top-0 left-0 flex items-center justify-center w-screen h-screen bg-black/60 z-30" x-show="modal"  x-cloak x-transition.opacity>
-                        <div class="p-5 bg-white shadow rounded-md w-[550px]" >
+                        <div class="p-5 bg-white shadow rounded-md mr-20 md:mr-0 w-[280px] md:w-[550px]" >
                             @livewire('panel.team-create-modal')
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                     <table class="w-full bg-white rounded-md">
                         <thead class="w-full p-2">
                             <tr class="p-4 text-sm border-b font-iranyekan-bold">
-                                <td class="p-5 w-72">
+                                <td class="p-5 w-28 md:w-72">
                                     نام تیم/شرکت
                                 </td>
                                 <td>
@@ -240,7 +240,7 @@
                 </div>
             </div>
 
-            <div class="col-span-4 bg-white rounded-md shadow h-[370px] relative">
+            <div class="col-span-12 md:col-span-4 bg-white rounded-md shadow h-[370px] relative">
                 <div class="flex items-center p-4 border-b ">
                     <span class="font-iranyekan-bold text-lg ">
                         پیوندهای من
@@ -313,11 +313,11 @@
             <div class="p-3 ">
                 <div class="">
                     <div class="flex flex-col gap-3" x-data="{tab:0}">
-                        <div class="flex justify-between text-black">
+                        <div class="flex flex-col md:flex-row justify-between text-black">
                             <div class="mb-5 text-lg text-black font-iranyekan-bold">
                                سایر متخصصین و تیم ها
                             </div>
-                            <div class="flex gap-5 font-iranyekan-bold">
+                            <div class="flex flex-col md:flex-row gap-5 font-iranyekan-bold">
                                 <label for="radio1" class="flex items-center gap-1" @click="tab=0">
                                     <input type="radio" id="radio1" name="radio-2" class="radio radio-primary" checked />
                                     <span class="text-sm">تیم ها و شرکت ها</span>
@@ -336,7 +336,7 @@
                         <div x-show="tab==0" class="flex flex-col gap-5">
                             <div>
                                 <div class="grid grid-cols-12 gap-5">
-                                    <form action="" class="col-span-8">
+                                    <form action="" class="col-span-12 md:col-span-8">
                                         <div class="flex items-center justify-between p-2 text-sm bg-white rounded-md shadow font-iranyekan-light">
                                             <input wire:model="search_team" class="w-full p-3 outline-none" type="text" placeholder="جستجو کنید...">
                                             <button>
@@ -344,7 +344,7 @@
                                             </button>
                                         </div>
                                     </form>
-                                    <form action="" class="col-span-4">
+                                    <form action="" class="col-span-12 md:col-span-4">
                                         <div class="flex items-center justify-between p-2 text-sm bg-white rounded-md shadow font-iranyekan-light">
                                             <input class="w-full p-3 outline-none" type="text" placeholder="جستجو بر اساس تخصص">
                                             <button>
@@ -359,7 +359,7 @@
                                 <table class="w-full bg-white rounded-md shadow">
                                     <thead class="w-full p-2">
                                         <tr class="p-4 text-sm border-b font-iranyekan-bold">
-                                            <td class="p-5 w-72">
+                                            <td class="p-5 w-28 md:w-72">
                                                 نام تیم/شرکت
                                             </td>
                                             <td>
@@ -415,7 +415,7 @@
                                             </td>
 
                                             <td class="px-3 py-3">
-                                                <div class="flex justify-end gap-3 font-iranyekan-regular ">
+                                                <div class="flex flex-col md:flex-row justify-end gap-3 font-iranyekan-regular ">
                                                     <a href="{{route('panel.teams.show',$myTeam->id)}}"
                                                          class="w-28 flex justify-center  gap-3 px-4 py-2 text-xs text-white bg-blue-600 rounded-md cursor-pointer hover:bg-blue-700">
                                                         <span>
@@ -506,7 +506,7 @@
                                 <table class="w-full bg-white rounded-md shadow">
                                     <thead class="w-full p-2">
                                         <tr class="text-sm font-iranyekan-bold">
-                                            <td class="p-5 w-72">
+                                            <td class="p-5 w-24 md:w-72">
                                                 نام متخصص
                                             </td>
                                             <td class="p-5">
@@ -569,7 +569,7 @@
                                                 </div>
                                             </td>
                                             <td class="px-3 py-3">
-                                                <div class="flex justify-end gap-3 font-iranyekan-regular items-center ">
+                                                <div class="flex flex-col md:flex-row justify-end gap-3 font-iranyekan-regular items-center ">
                                                     <a href="{{route('panel.profile.show',$i->code)}}"
                                                         class="w-32 flex justify-center  gap-3 px-4 py-2 text-xs text-white bg-blue-600 rounded-md cursor-pointer hover:bg-blue-700">
                                                         <span>

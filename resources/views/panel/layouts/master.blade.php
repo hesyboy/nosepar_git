@@ -9,18 +9,18 @@
 
         {{-- @mouseover="menu=true" @mouseover.away="menu=false" --}}
 
-        <div class="flex w-full" x-data="{menu:false}">
-            <div class="" :class="menu ? 'w-[350px]' : 'w-[80px]' " >
-                <div class="fixed top-0 right-0 h-screen bg-white" :class="menu ? 'w-[300px]' : 'w-[80px]' ">
+        <div class="relative flex justify-between w-full " x-data="{menu:false}">
+            <div class="z-50 absolute right-0 md:right-0 top-0 h-full" :class="menu ? 'w-[350px]' : 'w-[80px]' " >
+                <div class=" h-full bg-white" :class="menu ? 'w-[300px]' : 'w-[80px]' ">
                     @include('panel.layouts.sidebar')
                 </div>
             </div>
 
-            <div class="w-full">
+            <div class="w-full flex flex-col items-cener mr-20" :class="menu ? 'w-[calc(100%+350px)] md:w-full' : '' ">
                 <div class="">
                     @include('panel.layouts.header')
                 </div>
-                <div class="px-8 py-5">
+                <div class="px-5 py-5">
                     <div class="">
                         @yield('content')
                     </div>

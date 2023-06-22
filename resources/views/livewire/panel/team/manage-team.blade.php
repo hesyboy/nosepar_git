@@ -1,8 +1,8 @@
 <div>
 
 
-    <div class="fixed left-0 flex items-start justify-center w-screen top-1">
-        <div class="w-[500px]">
+    <div class="fixed left-0 flex items-center justify-center top-1 z-50 p-2 w-[400px]">
+        <div class="">
             @if (session('success'))
                 <div class="" >
                     <div class="">
@@ -146,7 +146,7 @@
 
         <div class="grid grid-cols-12 gap-5">
 
-            <div class="col-span-8 flex flex-col gap-5 ">
+            <div class="col-span-12 md:col-span-8 flex flex-col gap-5 ">
 
                 <div class=" bg-white rounded-md shadow h-[300px]">
                     <div class="flex items-center justify-between p-3 border-b font-iranyekan-bold" x-data="{modal:false}">
@@ -303,7 +303,7 @@
                             </div>
                             <form action="" class="flex flex-col gap-3">
 
-                                <div class="grid grid-cols-2 gap-3">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                                     <div class="flex flex-col gap-2">
                                         <span>نام تیم  </span>
                                         <input type="text" wire:model="name"
@@ -524,7 +524,7 @@
 
             </div>
 
-            <div class="col-span-4 bg-white rounded-md shadow h-[300px]">
+            <div class="col-span-12 md:col-span-4 bg-white rounded-md shadow h-[300px]">
                 <div class="flex items-center p-3 border-b ">
                     <span class="font-iranyekan-bold text-lg py-0.5">
                         اطلاعیه ها
