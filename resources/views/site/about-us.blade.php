@@ -4,14 +4,16 @@
 
 
 <div class="relative">
-    <div class="bg-gradient-to-b from-blue-600 to-blue-600 pb-40 h-[900px] md:h-[600px] w-full absolute top-0 left-0 "
+    <div class="bg-gradient-to-b from-blue-700 to-blue-700 h-[900px] md:h-[600px] w-full absolute top-0 left-0 "
     style="clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);">
+        <div style="background-image: url(assets/images/about-bg.svg);" class="w-full h-full">
 
+        </div>
     </div>
 
     <div class="container mx-auto z-50 relative py-28">
         <div class="flex flex-col gap-7 items-center text-white">
-            <h1 class="flex flex-col gap-5 items-center font-peyda-bold text-6xl">
+            <h1 class="flex flex-col gap-5 items-center font-peyda-bold text-5xl">
                 <span>
                     درباره
                 </span>
@@ -19,14 +21,22 @@
                     NoSepar
                 </span>
             </h1>
-            <div class="w-[70%] text-center text-xl leading-9">
+            <div class="w-[70%] text-center text-lg leading-9">
                 <p>
                     سال‌هاست که در کشور از یک چالش مهم به نام «انحصار» در حوزه‌های مختلف صحبت و گلایه میشه. آسیب‌های انحصار بسیار متنوع، متعدد و قابل توجه هستند. لذا ما باور داریم که باید همواره با تمام قدرت با این چالش مبارزه و اون رو محو کرد. ما دنبال شکستن این انحصار هستیم.
                 </p>
             </div>
-            {{-- <div>
-                social
-            </div> --}}
+            <div class="flex flex-row-reverse justify-center gap-5 py-2" :class="menu ? 'flex' : 'hidden' ">
+                <a>
+                    <img src="{{asset('assets/images/telegram-white.svg')}}" alt="" class="w-6 h-6">
+                </a>
+                <a>
+                    <img src="{{asset('assets/images/linkdin-white.svg')}}" alt="" class="w-6 h-6">
+                </a>
+                <a>
+                    <img src="{{asset('assets/images/github-white.svg')}}" alt="" class="w-6 h-6">
+                </a>
+            </div>
         </div>
     </div>
 

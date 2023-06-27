@@ -82,10 +82,10 @@
                 <div class="flex flex-col justify-between col-span-2 py-10 md:py-20">
                     <div class="flex flex-col font-iranyekan-light text-lg">
                         <h2 class="mb-5 text-2xl text-black font-iranyekan-bold">
-                            AIcrowd چطور کار میکنه؟
+                            NoSepar چطور کار میکنه؟
                         </h2>
                         <p>
-                            از طریق این ویدیو با ساز و کار AIcrowd آشنا شوید!
+                            از طریق این ویدیو با ساز و کار NoSepar آشنا شوید!
                         </p>
                         <p>
                              ما همواره در تلاشیم تا محیطی پویا برای جامعه فعال هوش مصنوعی در ایران فراهم کنیم.

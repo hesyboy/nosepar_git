@@ -25,14 +25,18 @@
                                 placeholder="نام تیم را وارد کنید">
                             </div>
                             <div class="flex flex-col gap-2">
-                                <span>عنوان شغلی  </span>
+                                <span>
+                                    تخصص تیم
+                                </span>
                                 <input type="text" wire:model="title" class="w-full p-3 rounded-md border border-gray-400 outline-blue-600 text-xs text-right"
-                                placeholder="عنوان شغلی را وارد کنید">
+                                placeholder="تخصص تیم  را وارد کنید">
                             </div>
                         </div>
                         <div>
                             <div class="flex flex-col gap-2">
-                                <span>توضیحات</span>
+                                <span>
+                                    تجربه های تیم
+                                </span>
                                 <textarea type="text" rows="3" wire:model="description" class="w-full p-3 rounded-md border border-gray-400 outline-blue-600 text-xs text-right" placeholder="توضیحات"></textarea>
                             </div>
                         </div>

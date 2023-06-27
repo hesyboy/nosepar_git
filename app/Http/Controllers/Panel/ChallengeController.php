@@ -14,4 +14,8 @@ class ChallengeController extends Controller
         // $allChallenge=Challenge::all();
         return view('panel.challenge.index');
     }
+
+    public function show(){
+        return view('panel.challenge.show');
+    }
 }

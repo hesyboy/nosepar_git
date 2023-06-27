@@ -59,7 +59,7 @@
             </div>
             <div class="items-center hidden gap-8 py-1 md:flex">
                 <div class="px-2">
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="" class="h-16">
+                    <img src="{{ asset('assets/images/logo-new.svg') }}" alt="" class="h-16">
                 </div>
                 <div>
                     <ul class="flex items-center gap-8 text-base">

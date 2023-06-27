@@ -29,22 +29,17 @@
         <div class="flex flex-row-reverse items-center gap-3 px-2">
 
             <div class="relative" x-data="{'toggle':false}" @click.away="toggle=false">
-                <a @click="toggle=!toggle" class="flex items-center gap-1 px-2 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-100">
+                <a @click="toggle=!toggle" class="flex items-center gap-1 px-2 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-200">
                     <img src="{{asset('assets/images/panel-header-notification.png')}}" alt="">
                 </a>
 
             </div>
 
 
-            <div class="relative" x-data="{'toggle':false}" @click.away="toggle=false">
-                <a @click="toggle=!toggle" class="flex items-center gap-1 px-2 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-100">
-                    <img src="{{asset('assets/images/panel-header-message.png')}}" alt="">
-                </a>
 
-            </div>
 
             <div class="relative" x-data="{'toggle':false}" @click.away="toggle=false">
-                <a @click="toggle=!toggle" class="flex items-center gap-5 px-2 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-100">
+                <a @click="toggle=!toggle" class="flex items-center gap-5 px-2 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-200">
                     <span class="text-base text-blue-600">
                         55
                     </span>
@@ -79,31 +74,10 @@
 
 
 
-            <div class="relative" x-data="{'toggle':false}" @click.away="toggle=false">
-                <a @click="toggle=!toggle" class="flex items-center gap-5 px-2 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-100">
-                    <span class="text-base text-blue-600">
-                        55
-                    </span>
-                    <img src="{{asset('assets/images/panel-header-star.png')}}" alt="">
-                </a>
-                <div x-show="toggle" x-cloak class="absolute left-0 px-2 mt-1 bg-white rounded-md shadow-lg top-14 w-52">
-                    <ul class="flex flex-col">
-                        <li class="px-2 py-4 border-b-2 border-slate-100">
-                            <a class="text-base text-blue-500 font-iranyekan-bold">
-                                55 امتیاز
-                            </a>
-                        </li>
-                        <li class="px-2 py-4 border-b-2 border-slate-100">
-                            <a class="text-base">
-                                راهنمای امتیازها
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
 
             <div class="relative" x-data="{'toggle':false}" @click.away="toggle=false">
-                <a @click="toggle=!toggle" class="flex items-center gap-1 px-3 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-100">
+                <a @click="toggle=!toggle" class="flex items-center gap-1 px-3 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-200">
                     <img src="{{asset('assets/images/panel-header-user.png')}}" alt="">
                 </a>
                 <div x-show="toggle" x-cloak class="absolute left-0 px-2 mt-1 bg-white rounded-md shadow-lg top-14 w-52">
@@ -144,12 +118,20 @@
             برای فعال سازی حساب نوسپار، پروفایل خود را تکمیل کنید!
         </div>
 
-        <div >
+        <div class="flex items-center gap-3">
             <a href="{{route('panel.account.index')}}" class="flex px-6 py-2 text-base text-white bg-blue-600 rounded-md cursor-pointer font-iranyekan-regular hover:bg-blue-700" >
+                <span>
+                فعال سازی پروفایل
+                </span>
+            </a>
+            <a href="{{route('panel.account.index')}}"
+            class="flex px-6 py-2 text-base bg-white text-blue-600 rounded-md cursor-pointer font-iranyekan-regular hover:font-bold" >
                 <span>
                     تکمیل پروفایل
                 </span>
             </a>
+
+
 
         </div>
     </div>

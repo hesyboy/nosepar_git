@@ -12,7 +12,8 @@
                     <span class="text-lg ">
                         تیم های من
                     </span>
-                    <div class="px-4 py-2 text-sm text-blue-800 bg-blue-100 rounded-md cursor-pointer hover:bg-blue-200" @click="modal=true">
+                    <div class="flex items-center gap-3 px-4 py-2 text-sm text-blue-800 bg-blue-100 rounded-md cursor-pointer hover:bg-blue-200" @click="modal=true">
+                        <i class="fi fi-rr-plus flex"></i>
                         <span>
                             ایجاد تیم جدید
                         </span>

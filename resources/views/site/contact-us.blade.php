@@ -8,9 +8,9 @@
     style="clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);">
 
     </div>
-    <div class="container relative z-50 w-full pt-10 pb-20 mx-auto">
-        <div class="flex w-full gap-10 items-center">
-            <div class="w-1/2 flex flex-col gap-8 mt-20 text-white">
+    <div class="container relative z-50 w-full pt-10 pb-20 mx-auto px-3">
+        <div class="flex flex-col md:flex-row w-full gap-10 items-center">
+            <div class="w-full md:w-1/2 flex flex-col gap-8 mt-20 text-white ">
                 <h1 class="font-peyda-bold text-5xl text-white">
                     تماس با ما
                 </h1>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-1/2 flex flex-col gap-10 p-5 bg-white rounded-md shadow-md">
+            <div class="w-full md:w-1/2 flex flex-col gap-10 p-5 bg-white rounded-md shadow-md">
                 <form action="">
                     <div class="flex flex-col gap-5">
                         <div class="text-xl font-iranyekan-regular">
@@ -97,7 +97,7 @@
         <div>
             <div class="flex border border-blue-100 rounded-md p-3 h-48 mt-40 mb-20">
                 <div>
-                    <div class="">
+                    <div class="hidden md:flex">
                         <img class="relative -top-36" src="{{ asset('assets/images/Frame.png') }}" alt="">
                     </div>
                 </div>

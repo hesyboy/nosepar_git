@@ -45,7 +45,7 @@
                     </div>
                     <div class="relative">
                         <input class="w-full p-4 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
-                        placeholder="ایمیل خود را وارد کنید" type="text" wire:model.debounce="email" >
+                        placeholder="ایمیل خود را وارد کنید" type="text" wire:model.lazy="email" >
 
                         <span class="absolute top-4 left-4">
                             <img wire:loading wire:target="email" src="{{ asset('assets/images/spinner.png') }}" class="animate-spin w-5 h-5">
@@ -73,7 +73,7 @@
                     </div>
                     <div class="relative" x-data="{showpass:false}">
                         <input class="w-full p-4 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
-                        placeholder="رمز عبور خود را وارد کنید" type="password" wire:model.debounce="password" :type="showpass ? 'text' : 'password' " >
+                        placeholder="رمز عبور خود را وارد کنید" type="password" wire:model.lazy="password" :type="showpass ? 'text' : 'password' " >
                         <div class="absolute top-4 left-4 flex items-center gap-3">
                             <span>
                                 <img wire:loading wire:target="password" src="{{ asset('assets/images/spinner.png') }}" class="animate-spin w-5 h-5">
@@ -103,7 +103,7 @@
                     </div>
                     <div class="relative" x-data="{showpass:false}">
                         <input class="w-full p-4 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
-                        placeholder="رمز عبور خود را وارد کنید" type="password" wire:model.debounce="password_confirmation" :type="showpass ? 'text' : 'password' " >
+                        placeholder="رمز عبور خود را وارد کنید" type="password" wire:model.lazy="password_confirmation" :type="showpass ? 'text' : 'password' " >
                         <div class="absolute top-4 left-4 flex items-center gap-3">
                             <span>
                                 <img wire:loading wire:target="password_confirmation" src="{{ asset('assets/images/spinner.png') }}" class="animate-spin w-5 h-5">

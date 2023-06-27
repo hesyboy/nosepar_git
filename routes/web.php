@@ -70,6 +70,8 @@ Route::prefix('/panel')->middleware(['auth','register.email.verify','user.comple
     });
     Route::prefix('/challenge')->group(function(){
         Route::get('/',[ChallengeController::class,'index'])->name('panel.challenge.index');
+        Route::get('/show',[ChallengeController::class,'show'])->name('panel.challenge.show');
+
     });
     Route::prefix('/profile')->group(function(){
         // Route::get('/',[ProfileController::class,'index'])->name('panel.profile.index');
