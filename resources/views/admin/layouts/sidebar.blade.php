@@ -66,6 +66,14 @@
                                 </span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.challenge.index')}}" class="flex text-sm items-center gap-3 p-2 rounded-md hover:bg-slate-900" >
+                                <i class="flex text-2xl fi fi-rr-bullet"></i>
+                                <span >
+                                   مدیریت چالش ها
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>

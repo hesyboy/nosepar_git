@@ -30,7 +30,7 @@
         @endif
 
         <div class="flex items-center justify-between p-5 bg-white rounded-md">
-            <form action="{{ route('admin.teams.experts.store') }}" method="post" class="flex flex-col gap-5">
+            <form action="{{ route('admin.teams.experts.store') }}" method="post" class="flex flex-col gap-5" enctype="multipart/form-data">
                 @csrf
             <div class="flex gap-5 items-center">
                 <div class="flex items-end gap-5">
@@ -39,6 +39,10 @@
                         <label for="">عنوان تخصص تیم  </label>
                         <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
                     </div>
+                </div>
+
+                <div class="p-2">
+                    <input type="file" name="image">
                 </div>
 
             </div>

@@ -21,7 +21,7 @@ class CompleteInfo extends Component
         return [
             'name' => ['required','min:2'],
             'lastname' => ['required','min:2'],
-            'phone' => ['required','numeric','digits:10','unique:users,mobile','regex:/9(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}/'],
+            'phone' => ['required','numeric','digits:9','unique:users,mobile','regex:/(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}/'],
             'contact_way' => ['required']
         ];
     }

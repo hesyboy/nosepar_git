@@ -22,6 +22,8 @@ class GoogleAuthController extends Controller
             $user = Socialite::driver('google')->user();
             $newuser=User::where('email',$user->email)->first();
             if($newuser){
+                $newuser->email_verified_at = now();
+                $newuser->update();
                 Auth::loginUsingId($newuser->id);
                 return redirect()->route('panel.index');
 
@@ -36,6 +38,7 @@ class GoogleAuthController extends Controller
                     $userCode=random_int(10000,999999);
                 }
                 $newuser->code=$userCode;
+                $newuser->email_verified_at = now();
                 $newuser->save();
                 Auth::loginUsingId($newuser->id);
                 return redirect()->route('panel.index');

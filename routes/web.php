@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ChallengeController as AdminChallengeController;
 use App\Http\Controllers\Admin\notificationController as AdminNotificationController;
 use App\Http\Controllers\Admin\TeamController as AdminTeamController;
 use App\Http\Controllers\Admin\TeamExpertController;
@@ -101,6 +102,12 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
             Route::post('/store',[TeamExpertController::class,'store'])->name('admin.teams.experts.store');
         });
     });
+
+    Route::prefix('/challenge')->group(function(){
+        Route::get('/',[AdminChallengeController::class,'index'])->name('admin.challenge.index');
+        Route::get('/create',[AdminChallengeController::class,'create'])->name('admin.challenge.create');
+    });
+
     Route::prefix('/notification')->group(function(){
         Route::get('/',[AdminNotificationController::class,'index'])->name('admin.notifications.index');
     });

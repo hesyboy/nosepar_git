@@ -18,7 +18,7 @@ class Index extends Component
 
     public $user;
 
-    public $first_name,$last_name,$title,$description;
+    public $first_name,$last_name,$job_title,$description;
     public $profile_image,$cover_image;
 
     public $email,$mobile,$password;
@@ -33,7 +33,7 @@ class Index extends Component
 
         $this->first_name=$this->user->first_name;
         $this->last_name=$this->user->last_name;
-        $this->title=$this->user->title;
+        $this->job_title=$this->user->title;
         $this->description=$this->user->description;
 
         $this->email=$this->user->email;
@@ -82,7 +82,7 @@ class Index extends Component
         return [
             'first_name' => ['required'],
             'last_name' => ['required'],
-            'title' => ['required'],
+            'job_title' => ['required'],
             'description' => ['required'],
 
 
@@ -97,20 +97,20 @@ class Index extends Component
 
         $this->validateOnly('first_name');
         $this->validateOnly('last_name');
-        $this->validateOnly('title');
+        $this->validateOnly('job_title');
         $this->validateOnly('description');
 
 
         $this->user->first_name = $this->first_name ;
         $this->user->last_name = $this->last_name ;
-        $this->user->title = $this->title ;
+        $this->user->title = $this->job_title ;
         $this->user->description = $this->description ;
 
-        if($this->cover_image){
-            $imgName=rand(100000,99999999);
-            $this->cover_image->storeAs('public/users/images', $imgName.'.'.$this->cover_image->extension());
-            $this->user->cover_image='/storage/users/images/'.$imgName.'.'.$this->cover_image->extension();
-        }
+        // if($this->cover_image){
+        //     $imgName=rand(100000,99999999);
+        //     $this->cover_image->storeAs('public/users/images', $imgName.'.'.$this->cover_image->extension());
+        //     $this->user->cover_image='/storage/users/images/'.$imgName.'.'.$this->cover_image->extension();
+        // }
 
 
         if($this->profile_image){

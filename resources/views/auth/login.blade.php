@@ -37,7 +37,7 @@
                         تمامی حقوق برای سایت
                     </span>
                     <span>
-                        AIcrowd.ir
+                        NoSepar.ir
                     </span>
                     <span>
                         محفوظ است

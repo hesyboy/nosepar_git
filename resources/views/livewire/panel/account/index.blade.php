@@ -1,56 +1,8 @@
 <div>
 
-    <div class="fixed left-0 flex items-start justify-center w-screen top-1">
-        <div class="w-[500px]">
-            @if (session('success'))
-                <div class="" >
-                    <div class="">
-                        <div class="flex items-center justify-between gap-3 p-2 text-sm text-white border-b border-gray-200 rounded-lg bg-emerald-800">
-                            <div class="flex items-center gap-3 ">
-                                <i class="flex p-1 text-2xl text-gray-800 bg-gray-100 rounded fi fi-rr-bell-ring"></i>
-                                <div class="">
-                                    {{session('success')}}
-                                </div>
-                            </div>
-                            <i class="flex px-2 text-lg text-gray-100 cursor-pointer fi fi-rr-cross" ></i>
-                        </div>
-                    </div>
-                </div>
-            @endif
-            @if (session('warning'))
-            <div class="" >
-                <div class="">
-                    <div class="flex items-center justify-between gap-3 p-2 text-sm text-white bg-orange-600 border-b border-gray-200 rounded-lg">
-                        <div class="flex items-center gap-3 ">
-                            <i class="flex p-1 text-2xl text-gray-800 bg-gray-100 rounded fi fi-rr-bell-ring"></i>
-                            <div class="">
-                                {{session('warning')}}
-                            </div>
-                        </div>
-                        <i class="flex px-2 text-lg text-gray-100 cursor-pointer fi fi-rr-cross"></i>
-                    </div>
-                </div>
-            </div>
-            @endif
-            @if (session('danger'))
-            <div class="" >
-                <div class="" x-show="notify">
-                    <div class="flex items-center justify-between gap-3 p-2 text-sm text-white bg-red-800 border-b border-gray-200 rounded-lg">
-                        <div class="flex items-center gap-3 ">
-                            <i class="flex p-1 text-2xl text-gray-800 bg-gray-100 rounded fi fi-rr-bell-ring"></i>
-                            <div class="">
-                                {{session('danger')}}
-                            </div>
-                        </div>
-                        <i class="flex px-2 text-lg text-gray-100 cursor-pointer fi fi-rr-cross" ></i>
-                    </div>
-                </div>
-            </div>
 
-            @endif
 
-        </div>
-    </div>
+    @include('panel.layouts.notification')
 
 
 
@@ -167,7 +119,7 @@
                                         {{$message}}
                                     </div>
                                 @enderror
-                                @error('title')
+                                @error('job_title')
                                     <div class="text-red-500">
                                         {{$message}}
                                     </div>
@@ -182,11 +134,7 @@
                                         {{$message}}
                                     </div>
                                 @enderror
-                                @error('cover_image')
-                                    <div class="text-red-500">
-                                        {{$message}}
-                                    </div>
-                                @enderror
+
                             </div>
                             <form action="" class="flex flex-col gap-3">
 
@@ -207,7 +155,7 @@
                                     </div>
                                     <div class="flex flex-col gap-2">
                                         <span>عنوان شغلی  </span>
-                                        <input type="text" wire:model="title" class="w-full p-4 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
+                                        <input type="text" wire:model="job_title" class="w-full p-4 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
                                         placeholder="عنوان شغلی را وارد کنید">
                                     </div>
                                 </div>
@@ -233,7 +181,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div>
+                                {{-- <div>
                                     <div class="flex flex-col gap-2">
                                         <span>تصویر کاور</span>
                                         <label class=" w-full p-3 rounded-md border-2 border-dashed border-blue-500 outline-blue-600 text-sm text-right cursor-pointer">
@@ -248,7 +196,7 @@
                                         </label>
 
                                     </div>
-                                </div>
+                                </div> --}}
 
                             </form>
                         </div>
@@ -421,7 +369,7 @@
 
             <div class="col-span-2 flex flex-col gap-5" >
 
-                <div class="flex items-center justify-between p-3 text-blue-800 bg-blue-100 rounded-md">
+                {{-- <div class="flex items-center justify-between p-3 text-blue-800 bg-blue-100 rounded-md">
                     <div class="text-base font-iranyekan-bold">
                         پروفایل خود را فعال کنید!
                     </div>
@@ -434,7 +382,7 @@
                         </div>
 
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="bg-white rounded-md shadow p-5 ">
                     <div  class=" flex flex-col justify-between gap-5">

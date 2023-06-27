@@ -49,7 +49,7 @@
                     </div>
                     <div class="relative">
                         <input class="w-full p-4 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
-                        placeholder="" type="text" wire:model.debounce="name" >
+                        placeholder="" type="text" wire:model.lazy="name" >
 
                         <span class="absolute top-4 left-4">
                             <img wire:loading wire:target="name" src="{{ asset('assets/images/spinner.png') }}" class="animate-spin w-5 h-5">
@@ -75,7 +75,7 @@
                     </div>
                     <div class="relative">
                         <input class="w-full p-4 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
-                        placeholder="" type="text" wire:model.debounce="lastname" >
+                        placeholder="" type="text" wire:model.lazy="lastname" >
 
                         <span class="absolute top-4 left-4">
                             <img wire:loading wire:target="lastname" src="{{ asset('assets/images/spinner.png') }}" class="animate-spin w-5 h-5">
@@ -103,11 +103,11 @@
                     </div>
                     <div class="relative">
                         <input class="w-full p-4 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
-                        placeholder="" type="text" wire:model.debounce="phone" >
+                        placeholder="" type="text" wire:model.lazy="phone" >
 
                         <span class="absolute top-4 left-4 flex ">
                             <span class="mx-3">
-                               | 98+
+                               | 09
                             </span>
                             <img wire:loading wire:target="phone" src="{{ asset('assets/images/spinner.png') }}" class="animate-spin w-5 h-5">
                             @error('phone')
@@ -139,7 +139,7 @@
                         {{-- <input class="w-full p-4 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
                         placeholder="" type="text" wire:model.debounce="contact_way" > --}}
                         <select name="" id="" class="w-full p-3 rounded-md border border-gray-400 outline-blue-600 text-sm text-right"
-                        wire:model.debounce="contact_way">
+                        wire:model.lazy="contact_way">
                             <option value=""></option>
                             <option value="0">
                                 جستجو در گوگل

@@ -93,9 +93,13 @@
                             </a>
                         </li>
                         <li class="px-2 py-4">
-                            <a class="text-base text-red-600">
-                                خروج
-                            </a>
+                            <form action="{{route('logout')}}" method="post">
+                                @csrf
+                                @method('post')
+                                <button class="text-base text-red-600" type="submit">
+                                    خروج
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -119,11 +123,11 @@
         </div>
 
         <div class="flex items-center gap-3">
-            <a href="{{route('panel.account.index')}}" class="flex px-6 py-2 text-base text-white bg-blue-600 rounded-md cursor-pointer font-iranyekan-regular hover:bg-blue-700" >
+            {{-- <a href="{{route('panel.account.index')}}" class="flex px-6 py-2 text-base text-white bg-blue-600 rounded-md cursor-pointer font-iranyekan-regular hover:bg-blue-700" >
                 <span>
                 فعال سازی پروفایل
                 </span>
-            </a>
+            </a> --}}
             <a href="{{route('panel.account.index')}}"
             class="flex px-6 py-2 text-base bg-white text-blue-600 rounded-md cursor-pointer font-iranyekan-regular hover:font-bold" >
                 <span>

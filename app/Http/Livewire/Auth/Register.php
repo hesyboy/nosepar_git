@@ -30,7 +30,7 @@ class Register extends Component
     {
         return [
             'email' => ['required','email','unique:users','regex:/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/'],
-            'password' => ['required', Password::min(8)->letters()->symbols()],
+            'password' => ['required', Password::min(6)],
             'password_confirmation'  => ['required','same:password'],
             'law' => ['accepted'],
         ];

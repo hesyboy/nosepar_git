@@ -23,9 +23,9 @@
 
             </div>
         </div>
-        <div class="fixed bottom-0 w-full">
+        {{-- <div class="fixed bottom-0 w-full">
             @include('admin.layouts.footer')
-        </div>
+        </div> --}}
 
     </div>
 

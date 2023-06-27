@@ -134,7 +134,8 @@ return [
         "hour"                      => "ساعت",
         "minute"                    => "دقیقه",
         "second"                    => "ثانیه",
-        "title"                     => "عنوان کالا",
+        "title"                     => "عنوان ",
+        "job_title"                 => "عنوان شغلی",
         "text"                      => "متن",
         "content"                   => "محتوا",
         "description"               => "توضیحات کالا",
@@ -156,6 +157,9 @@ return [
         "reference_id"              => "ارجاع",
         "priority_id"               => "اولویت",
         "category_id"               => "دسته بندی",
-        
+        "contact_way"               => "راه های ارتباطی",
+        "input"                     => "مقدار ورودی",
+        "code"                      => "کد ارسالی"
+
     ],
 ];

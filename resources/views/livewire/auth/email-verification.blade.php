@@ -66,7 +66,7 @@
                     </div>
                     <div class="relative">
                         <input class="w-full p-4 text-sm text-right border border-gray-400 rounded-md outline-blue-600"
-                        placeholder=" کد تاییدیه خود را وارد کنید" type="text" wire:model.debounce="input" >
+                        placeholder=" کد تاییدیه خود را وارد کنید" type="text" wire:model.lazy="input" >
 
                         <span class="absolute top-4 left-4">
                             <img wire:loading wire:target="input" src="{{ asset('assets/images/spinner.png') }}" class="w-5 h-5 animate-spin">
