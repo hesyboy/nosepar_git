@@ -2,16 +2,16 @@
 
 @section('content')
 
-<div class="flex flex-col gap-5 ">
+<div class="flex flex-col gap-5 p-3">
 
 
 
     <div class="bg-gradient-to-b from-white to-[#EBF1FA] pb-40"
     style="clip-path: polygon(0 0, 100% 1%, 100% 80%, 0% 100%);">
-        <div class="container mx-auto ">
-            <div class="grid items-center grid-cols-2 gap-5 ">
-                <div class="flex flex-col gap-10">
-                    <div class="flex flex-col gap-3  font-bold text-blue-700 font-peyda-bold text-5xl">
+        <div class="container mx-auto  ">
+            <div class="grid items-center grid-cols-1 md:grid-cols-2 gap-5 ">
+                <div class="flex flex-col gap-8 md:gap-10">
+                    <div class="flex flex-col gap-3  font-bold text-blue-700 font-peyda-bold text-3xl md:text-5xl pt-10 md:pt-1 items-center md:items-start">
                         <div class="font-peyda-bold">
                             بستر تعاملی متخصصان
                         </div>
@@ -24,21 +24,21 @@
                             </span>
                         </div>
                     </div>
-                    <div class="w-[550px] text-xl font-iranyekan-regular">
+                    <div class="w-full md:w-[550px] text-base md:text-xl font-iranyekan-regular">
                         ما کارشناسان و علاقه مندان به علم داده را قادر می سازیم تا به طور مشترک مشکلات دنیای واقعی را از طریق چالش ها حل کنند.
                     </div>
-                    <div class="flex gap-3 text-base">
+                    <div class="flex justify-center md:justify-start gap-3 text-base">
                         @auth
-                        <a href="{{ route('panel.index') }}" class="flex items-center gap-3 px-12 py-3 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-800 ">
-                            <span class="hidden md:flex"> ورود به ناحیه کاربری  </span>
+                        <a href="{{ route('panel.index') }}" class="flex items-center gap-3 px-6 md:px-12 py-3 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-800 ">
+                            <span class=""> ورود به ناحیه کاربری  </span>
                         </a>
                         @else
-                            <a href="{{ route('register') }}" class="flex items-center gap-3 px-12 py-3 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-800 ">
-                                <span class="hidden md:flex">
+                            <a href="{{ route('register') }}" class="flex items-center gap-3 px-6 md:px-12 py-3 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-800 ">
+                                <span class="">
                                     تیم سازی کنید
                                 </span>
                             </a>
-                            <a class="flex items-center gap-5 px-12 py-3 text-black bg-white rounded-md shadow-md">
+                            <a class="flex items-center gap-5 px-6 md:px-12 py-3 text-black bg-white rounded-md shadow-md">
 
                                 <span class="">
                                     تعیین سطح کنید
@@ -76,11 +76,11 @@
         </div>
     </div>
 
-    <div class="z-50 -mt-36 ">
+    <div class="z-50 -mt-20 md:-mt-36 ">
         <div class="container mx-auto ">
-            <div class="grid grid-cols-5 gap-5 ">
-                <div class="flex flex-col justify-between col-span-2 py-20">
-                    <div class="flex flex-col font-iranyekan-light text-xl">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-5 ">
+                <div class="flex flex-col justify-between col-span-2 py-10 md:py-20">
+                    <div class="flex flex-col font-iranyekan-light text-lg">
                         <h2 class="mb-5 text-2xl text-black font-iranyekan-bold">
                             AIcrowd چطور کار میکنه؟
                         </h2>
@@ -91,13 +91,13 @@
                              ما همواره در تلاشیم تا محیطی پویا برای جامعه فعال هوش مصنوعی در ایران فراهم کنیم.
                         </p>
                     </div>
-                    <div class="flex flex-col gap-3">
+                    <div class="flex flex-col gap-3 my-2">
                         <div class="text-lg">
                             سوالی دارید؟ از ما بپرسید!
                         </div>
                         <div class="flex">
                             <a href="{{ route('site.contact-us') }}" class="flex items-center gap-3 px-12 py-3 text-blue-600 bg-blue-100 rounded-md hover:font-bold ">
-                                <span class="hidden md:flex"> تماس با ما  </span>
+                                <span class=""> تماس با ما  </span>
                             </a>
                         </div>
                     </div>
@@ -115,18 +115,18 @@
     style="clip-path: polygon(0 150px, 100% 1%, 100% 100%, 0% 100%);">
         <div class="container mx-auto ">
             <div class="flex flex-col gap-3" x-data="{tab:0}">
-                <div class="flex justify-between text-black">
+                <div class="flex flex-col md:flex-row justify-between text-black">
                     <div class="mb-5 text-2xl font-iranyekan-bold text-black">
                         متخصصین و تیم ها
                     </div>
                     <div class="flex gap-5">
                         <label for="radio1" class="flex items-center gap-1" @click="tab=0">
                             <input type="radio" id="radio1" name="radio-2" class="radio radio-primary" checked />
-                            <span class="text-xl">تیم ها و شرکت ها</span>
+                            <span class="text-base">تیم ها و شرکت ها</span>
                         </label>
                         <label for="radio2" class="flex items-center gap-1" @click="tab=1">
                             <input type="radio" id="radio2" name="radio-2" class="radio radio-primary" />
-                            <span class="text-xl">متخصصان هوش مصنوعی    </span>
+                            <span class="text-base">متخصصان هوش مصنوعی    </span>
                         </label>
 
                     </div>
@@ -139,7 +139,7 @@
                     <div>
                         <div class="">
                             <form action="">
-                                <div class="flex items-center justify-between p-3 bg-white rounded-md font-iranyekan-light text-xl">
+                                <div class="flex items-center justify-between p-2 bg-white rounded-md font-iranyekan-light text-base">
                                     <input class="w-full p-3 outline-none" type="text" placeholder="جستجو کنید...">
                                     <button>
                                         <i class="flex p-3 text-xl fi fi-rr-search"></i>
@@ -154,13 +154,13 @@
                         <table class="w-full bg-white rounded-md shadow">
                             <thead class="w-full p-2">
                                 <tr class="font-iranyekan-bold text-xl">
-                                    <td class="p-4 w-72">
+                                    <td class="p-4 w-96 md:w-72">
                                         نام تیم/شرکت
                                     </td>
-                                    <td>
+                                    <td class="hidden md:flex p-4">
                                        اعضا
                                     </td>
-                                    <td>
+                                    <td  class="hidden md:flex p-4">
 
                                     </td>
                                 </tr>
@@ -177,7 +177,7 @@
                                             </span>
                                         </div>
                                     </td>
-                                    <td class="p-3">
+                                    <td  class="hidden md:flex p-3">
                                         <div class="flex">
                                             <span class="-mr-2 h-7 w-7 rounded-full bg-blue-400 cursor-pointer hover:z-50"></span>
                                             <span class=" -mr-2 h-7 w-7 rounded-full bg-red-400 cursor-pointer hover:z-50"></span>
@@ -187,7 +187,7 @@
 
                                         </div>
                                     </td>
-                                    <td class="p-3">
+                                    <td class="hidden md:flex p-3">
                                         <div class="flex justify-end gap-3">
                                             <div>
                                                 <span class="p-2 font-iranyekan-regular text-base duration-200 bg-orange-200 rounded-md cursor-pointer hover:bg-orange-300">ML</span>

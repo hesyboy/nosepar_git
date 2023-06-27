@@ -1,5 +1,5 @@
 <div>
-    <div class="p-10 bg-gray-50 w-full flex flex-col gap-20 items-center h-full">
+    <div class="p-5 md:p-10 bg-gray-50 w-full flex flex-col gap-20 items-center h-full">
         <div class="w-full flex justify-end">
             <div class="flex gap-2 items-center text-lg">
                 <span class="text-gray-500 ">
@@ -10,7 +10,7 @@
                 </a>
             </div>
         </div>
-        <form wire:submit.prevent="save" class="w-[400px]">
+        <form wire:submit.prevent="save" class="w-full md:w-[400px]">
             @csrf
 
             <div class="text-right mb-5 flex flex-col gap-5">
@@ -145,7 +145,7 @@
                     <div class="w-full flex gap-2 items-center">
                         <label class="flex gap-2">
 
-                            <input dir="ltr" type="checkbox" wire:model.debounce="law" class="checkbox checkbox-primary border-gray-400"/>
+                            <input type="checkbox" wire:model.debounce="law" class="checkbox checkbox-primary border-gray-400"/>
 
 
 

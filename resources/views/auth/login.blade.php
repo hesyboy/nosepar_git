@@ -1,8 +1,8 @@
 <x-guest-layout>
-    <div class="grid grid-cols-2 h-screen" dir="rtl">
+    <div class="grid grid-cols-1 md:grid-cols-2 h-screen" dir="rtl">
 
 
-        <div class="bg-blue-700 px-20 pt-40 pb-10 text-right text-white flex flex-col items-center justify-between"
+        <div class="bg-blue-700 px-20 pt-40 pb-10 text-right text-white hidden md:flex  flex-col items-center justify-between"
         style="background-image: url('{{ asset('assets/images/login.png') }}');">
             <div class="flex flex-col gap-14">
                 <div class="flex ">
@@ -49,7 +49,7 @@
 
 
 
-        <div class="p-10 bg-gray-50 w-full flex flex-col gap-20 items-center h-full">
+        <div class="p-5 md:p-10 bg-gray-50 w-full flex flex-col gap-20 items-center h-full">
             <div class="w-full flex justify-end">
                 <div class="flex gap-2 items-center text-lg">
                     <span class="text-gray-500  ">

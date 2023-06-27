@@ -138,7 +138,7 @@
 
 </div>
 
-<div class="px-5 py-3 pt-5">
+<div class="px-3 py-3 pt-5">
     <div class="flex flex-col md:flex-row gap-3 items-center justify-between p-3 text-blue-800 bg-blue-100 rounded-md">
         <div class="text-base font-iranyekan-bold">
             برای فعال سازی حساب نوسپار، پروفایل خود را تکمیل کنید!

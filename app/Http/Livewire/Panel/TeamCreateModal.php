@@ -43,7 +43,7 @@ class TeamCreateModal extends Component
         'name' => 'required',
         'title' => 'required',
         'description' => 'required',
-        'cover_image' => 'image|max:1024',
+        // 'cover_image' => 'image|max:1024',
         'profile_image' => 'image|max:1024',
         'email_invite' =>'required|email',
     ];
@@ -116,9 +116,9 @@ class TeamCreateModal extends Component
         $team->description = $this->description;
         $team->owner_id = Auth::id();
 
-        $imgName=rand(100000,99999999);
-        $this->cover_image->storeAs('public/teams/images', $imgName.'.'.$this->profile_image->extension());
-        $team->cover_image='/storage/teams/images/'.$imgName.'.'.$this->cover_image->extension();
+        // $imgName=rand(100000,99999999);
+        // $this->cover_image->storeAs('public/teams/images', $imgName.'.'.$this->profile_image->extension());
+        // $team->cover_image='/storage/teams/images/'.$imgName.'.'.$this->cover_image->extension();
 
         $imgName=rand(100000,99999999);
         $this->profile_image->storeAs('public/teams/images', $imgName.'.'.$this->profile_image->extension());

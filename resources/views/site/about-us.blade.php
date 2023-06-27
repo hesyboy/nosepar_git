@@ -4,7 +4,7 @@
 
 
 <div class="relative">
-    <div class="bg-gradient-to-b from-blue-600 to-blue-600 pb-40 h-[600px] w-full absolute top-0 left-0 "
+    <div class="bg-gradient-to-b from-blue-600 to-blue-600 pb-40 h-[900px] md:h-[600px] w-full absolute top-0 left-0 "
     style="clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);">
 
     </div>
@@ -16,7 +16,7 @@
                     درباره
                 </span>
                 <span>
-                    AIcrowd
+                    NoSepar
                 </span>
             </h1>
             <div class="w-[70%] text-center text-xl leading-9">
@@ -24,9 +24,9 @@
                     سال‌هاست که در کشور از یک چالش مهم به نام «انحصار» در حوزه‌های مختلف صحبت و گلایه میشه. آسیب‌های انحصار بسیار متنوع، متعدد و قابل توجه هستند. لذا ما باور داریم که باید همواره با تمام قدرت با این چالش مبارزه و اون رو محو کرد. ما دنبال شکستن این انحصار هستیم.
                 </p>
             </div>
-            <div>
+            {{-- <div>
                 social
-            </div>
+            </div> --}}
         </div>
     </div>
 
@@ -35,8 +35,8 @@
 
 
 
-<div class="container mx-auto relative pt-32 pb-20">
-    <div class="grid grid-cols-2 gap-20">
+<div class="container mx-auto relative pt-48 md:pt-32 pb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 p-3">
         <div class="grid grid-cols-2 gap-8">
             @foreach ([1,2,3,4] as $item)
                 <div class="flex flex-col gap-3">
@@ -81,11 +81,11 @@
     </div>
 
     <div class="container mx-auto z-50  relative top-14 py-28">
-        <div class="flex flex-col gap-8 text-white">
-            <div class="text-right font-iranyekan-bold text-2xl">
-                تیم AIcrowd
+        <div class="flex flex-col gap-8 text-white p-3">
+            <div class="text-right font-iranyekan-bold text-3xl md:text-2xl">
+                تیم NoSepar
             </div>
-            <div class="w-full grid grid-cols-3 gap-5">
+            <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-5">
                 @foreach ([1,2,3,4,5,6] as $item )
                     <div class="bg-white rounded-lg p-3 text-black flex gap-3">
                         <img src="{{ asset('assets/images/team.png') }}" alt="" class="w-32 rounded-md">

@@ -37,7 +37,7 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-col md:flex-row gap-5 items-center justify-between">
+                        <div class="flex flex-col md:flex-row gap-5 justify-between">
 
                             <div>
                                 <div class="flex flex-col gap-2">
@@ -57,7 +57,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div>
+                            {{-- <div>
                                 <div class="flex flex-col gap-2">
                                     <span>تصویر کاور</span>
                                     <label class=" w-64 h-28 flex items-center justify-center p-2 rounded-md border-2 border-dashed  border-gray-400 outline-blue-600 text-xs text-right cursor-pointer">
@@ -75,7 +75,7 @@
                                     </label>
 
                                 </div>
-                            </div>
+                            </div> --}}
 
 
                         </div>
@@ -144,7 +144,7 @@
 
                     </form>
                 </div>
-                <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex  justify-between items-center">
                     <div>
                         <div wire:click="previous_page" class="px-6 py-3 font-iranyekan-bold text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer">
                             مرحله قبل
@@ -222,8 +222,8 @@
 
                                     <div class="w-full flex flex-col md:flex-row gap-3 items-center">
                                         <input type="text" wire:model="email_invite" placeholder="ایمیل گیرنده را وارد کنید" class="w-full px-3 py-3 rounded-md border border-gray-400 outline-blue-600 text-xs text-right">
-                                        <span wire:click="addEmailInvite()" class="w-48 py-3 px-3 font-iranyekan-regular text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer text-xs text-center">
-                                            افزودن ایمیل
+                                        <span wire:click="addEmailInvite()" class="w-full md:w-48 py-3 px-3 font-iranyekan-regular text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer text-xs text-center">
+                                            افزودن ایمیل کاربر
                                         </span>
                                     </div>
 
@@ -249,7 +249,7 @@
 
                         </div>
                     </div>
-                    <div class="flex flex-col md:flex-row justify-between items-center text-xs">
+                    <div class="flex  justify-between items-center text-xs">
                         <div>
                             <div wire:click="previous_page" class="px-6 py-3 font-iranyekan-bold text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer">
                                 مرحله قبل
@@ -366,7 +366,7 @@
                     </div>
 
                 </div>
-                <div class="flex flex-col md:flex-row justify-between items-center text-xs">
+                <div class="flex justify-between items-center text-xs">
                     <div>
                         <div wire:click="previous_page" class="px-6 py-3 font-iranyekan-regular text-blue-800 bg-blue-100 hover:bg-blue-200 rounded-md cursor-pointer">
                             مرحله قبل

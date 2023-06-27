@@ -5,8 +5,8 @@
 @yield('headtags')
 
 <body dir="rtl"  data-theme="light" class="h-screen">
-    <div class="bg-white flex flex-col">
-        <div>
+    <div class=" bg-white flex flex-col">
+        <div class="">
             @include('site.layouts.header')
         </div>
         <div class="">

@@ -1,9 +1,9 @@
 <x-guest-layout>
 
-    <div class="grid grid-cols-2 h-screen " style="direction: rtl">
+    <div class="grid grid-cols-1 md:grid-cols-2 h-screen " style="direction: rtl">
 
 
-        <div class="bg-blue-700 px-20 pt-40 pb-10 text-right text-white flex flex-col items-center justify-between"
+        <div class="bg-blue-700 px-20 pt-40 pb-10 text-right text-white hidden md:flex flex-col items-center justify-between"
         style="background-image: url('{{ asset('assets/images/login.png') }}');">
             <div class="flex flex-col gap-14">
                 <div class="flex ">
@@ -48,7 +48,9 @@
         </div>
 
 
-        @livewire('auth.register')
+       <div class="">
+            @livewire('auth.register')
+       </div>
 
 
 
