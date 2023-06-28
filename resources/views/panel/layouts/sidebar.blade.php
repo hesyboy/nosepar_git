@@ -1,5 +1,5 @@
 
-<div class="flex flex-col h-full border-l " @mouseover="menu=true" @mouseover.away="menu=false">
+<div class="flex flex-col h-full border-l "  >
     <div class="flex items-center justify-center pt-3 pb-6 " :class="menu ? 'bg-blue-600' : '' " >
         <div class="relative flex items-center w-full gap-8 px-3 py-5 " :class="menu ? 'justify-between' : 'justify-center' ">
             <div class="w-full flex flex-col items-center gap-3"  x-show="menu" x-cloak>
@@ -15,9 +15,9 @@
                     </span>
                 </div>
             </div>
-            <span @click="menu=!menu" class="absolute left-4 top-4 p-2 rounded-md">
-                <img class="" src="{{ asset('assets/images/panel-menu-toggle-close.png') }}" x-show="menu" x-cloak>
-                <img class="" src="{{ asset('assets/images/panel-menu-toggle-open.png') }}" x-show="!menu" x-cloak>
+            <span  class=" p-2 rounded-md z-50" @click="menu=!menu" >
+                <img class="" src="{{ asset('assets/images/panel-menu-toggle-close.png') }}" x-show="menu" x-cloak >
+                <img class="" src="{{ asset('assets/images/panel-menu-toggle-open.png') }}" x-show="!menu" x-cloak >
                 {{-- <i class="flex text-2xl fi fi-rr-menu-burger" x-show="menu"></i>
                 <i class="flex text-2xl fi fi-rr-bars-sort" x-show="!menu"></i> --}}
             </span>
@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="flex flex-col justify-between h-full ">
+    <div class="flex flex-col justify-between h-full " @mouseover="menu=true" @mouseover.away="menu=false">
         <div class="flex flex-col gap-3 mt-2" :class="menu ? 'p-3' : 'p-1' ">
 
             <div class="">

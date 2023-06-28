@@ -33,15 +33,17 @@
                             <span class=""> ورود به ناحیه کاربری  </span>
                         </a>
                         @else
-                            <a href="{{ route('register') }}" class="flex items-center gap-3 px-6 md:px-12 py-3 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-800 ">
+                            <a href="{{ route('register') }}" class="flex w-52 justify-center items-center gap-3 px-6 md:px-12 py-3 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-800 ">
                                 <span class="">
-                                    تیم سازی کنید
+                                    شرکت در چالش
+
                                 </span>
                             </a>
-                            <a class="flex items-center gap-5 px-6 md:px-12 py-3 text-black bg-white rounded-md shadow-md">
+                            <a class="flex justify-center items-center w-52 gap-5 px-6 md:px-12 py-3 text-blue-600 bg-white rounded-md shadow-md">
 
-                                <span class="">
-                                    تعیین سطح کنید
+                                <span class="font-bold">
+                                    ایجاد چالش
+
                                 </span>
                             </a>
                         @endauth
