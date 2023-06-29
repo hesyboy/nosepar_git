@@ -18,7 +18,7 @@
             <div class="w-full p-3 bg-white rounded-md shadow-md flex items-center justify-center">
                 <div class="flex flex-col gap-3 items-center justify-center bg-slate-200 p-3 rounded-md">
                     <div class="text-2xl">
-                        به پنل مدیریت AICrowd خوش آمدید
+                        به پنل مدیریت NoSepar خوش آمدید
                     </div>
                 </div>
             </div>

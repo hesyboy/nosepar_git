@@ -33,59 +33,69 @@
             <form action="{{ route('admin.teams.experts.store') }}" method="post" class="w-full gap-5" enctype="multipart/form-data">
                 @csrf
             <div class="w-full flex gap-5 items-start">
-                <div class="w-full grid grid-cols-4 items-center gap-5">
+                <div class="w-full grid grid-cols-1 items-center gap-5">
 
                     <div class="flex flex-col gap-1">
                         <label for="">عنوان چالش   </label>
                         <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
                     </div>
-                    <div class="flex flex-col gap-1 ">
-                        <label for="">توضیحات چالش   </label>
-                        <textarea type="text" name="description" rows="5" cols="9" value="" class="p-2 bg-slate-100 border rounded-md outline-none ">
-                        </textarea>
+
+                    <div class="grid grid-cols-3 gap-3">
+
+                        <div class="flex flex-col gap-1 ">
+                            <label for="">
+                                قوانین و مقررات چالش
+                            </label>
+                            <textarea type="text" name="description" rows="5" cols="9" value="" class="p-2 bg-slate-100 border rounded-md outline-none "></textarea>
+                        </div>
+                        <div class="flex flex-col gap-1 ">
+                            <label for="">توضیحات چالش   </label>
+                            <textarea type="text" name="description" rows="5" cols="9" value="" class="p-2 bg-slate-100 border rounded-md outline-none "></textarea>
+                        </div>
+                        <div class="flex flex-col gap-1 ">
+                            <label for="">جوایز نقدی و غیرنقدی چالش   </label>
+                            <textarea type="text" name="description" rows="5" cols="9" value="" class="p-2 bg-slate-100 border rounded-md outline-none "></textarea>
+                        </div>
                     </div>
-                    <div class="flex flex-col gap-1 ">
-                        <label for="">جوایز نقدی و غیرنقدی چالش   </label>
-                        <textarea type="text" name="description" rows="5" cols="9" value="" class="p-2 bg-slate-100 border rounded-md outline-none ">
-                        </textarea>
+
+
+
+                    <div class="grid grid-cols-4 gap-3">
+                        <div class="flex flex-col gap-1">
+                            <label for="">لینک داده های چالش   </label>
+                            <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label for="">لینک دیسکورد     </label>
+                            <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label for="">زمان شروع چالش     </label>
+                            <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label for="">زمان پایان چالش      </label>
+                            <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
+                        </div>
                     </div>
-                    <div class="flex flex-col gap-1 ">
-                        <label for="">
-                            قوانین و مقررات چالش
-                        </label>
-                        <textarea type="text" name="description" rows="5" cols="9" value="" class="p-2 bg-slate-100 border rounded-md outline-none ">
-                        </textarea>
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <label for="">لینک داده های چالش   </label>
-                        <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <label for="">لینک دیسکورد     </label>
-                        <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <label for="">زمان شروع چالش     </label>
-                        <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <label for="">زمان پایان چالش      </label>
-                        <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
-                    </div>
+
                     <div class="flex flex-col gap-1">
                         <label for="">برگزارکنندگان  چالش      </label>
                         <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
                     </div>
+
+                    <div class="p-2 mt-3">
+                        <input type="file" name="image">
+                    </div>
+
                 </div>
 
-                <div class="p-2">
-                    <input type="file" name="image">
-                </div>
+
 
             </div>
 
 
-                <div>
+                <div class="mt-5">
                     <button type="submit" class="flex items-center gap-1 bg-slate-900 hover:bg-slate-800 duration-200 text-white py-2 px-4 rounded-md ">افزودن </button>
                 </div>
             </form>

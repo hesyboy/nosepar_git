@@ -58,19 +58,26 @@
                                 </span>
                             </a>
                         </li>
+
+                    </ul>
+                </div>
+            </li>
+
+
+            <li x-data="{'menudropdown':false}"  :class="[menudropdown ? 'bg-slate-800 rounded-md' : '',menu ? '' : 'relative' ] ">
+                <a @click="menudropdown=!menudropdown" class="flex items-center gap-5 p-3 rounded-md hover:bg-slate-800 cursor-pointer" >
+                    <i class="flex text-2xl fi fi-rr-user"></i>
+                    <span x-show="menu">
+                        مدیریت تخصص ها
+                    </span>
+                </a>
+                <div class="px-4 py-2" x-show="menudropdown" :class="menu ? '' : 'absolute right-16 top-0 w-[200px] bg-slate-900 shadow-md rounded-md' ">
+                    <ul>
                         <li>
                             <a href="{{ route('admin.teams.experts.index') }}" class="flex text-sm items-center gap-3 p-2 rounded-md hover:bg-slate-900" >
                                 <i class="flex text-2xl fi fi-rr-bullet"></i>
                                 <span >
-                                    تخصص تیم ها
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.challenge.index')}}" class="flex text-sm items-center gap-3 p-2 rounded-md hover:bg-slate-900" >
-                                <i class="flex text-2xl fi fi-rr-bullet"></i>
-                                <span >
-                                   مدیریت چالش ها
+                                    لیست تخصص ها
                                 </span>
                             </a>
                         </li>
@@ -78,6 +85,26 @@
                 </div>
             </li>
 
+            <li x-data="{'menudropdown':false}"  :class="[menudropdown ? 'bg-slate-800 rounded-md' : '',menu ? '' : 'relative' ] ">
+                <a @click="menudropdown=!menudropdown" class="flex items-center gap-5 p-3 rounded-md hover:bg-slate-800 cursor-pointer" >
+                    <i class="flex text-2xl fi fi-rr-user"></i>
+                    <span x-show="menu">
+                        مدیریت چالش ها
+                    </span>
+                </a>
+                <div class="px-4 py-2" x-show="menudropdown" :class="menu ? '' : 'absolute right-16 top-0 w-[200px] bg-slate-900 shadow-md rounded-md' ">
+                    <ul>
+                        <li>
+                            <a href="{{ route('admin.challenge.index')}}" class="flex text-sm items-center gap-3 p-2 rounded-md hover:bg-slate-900" >
+                                <i class="flex text-2xl fi fi-rr-bullet"></i>
+                                <span >
+                                    لیست چالش ها
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 
 
             <li x-data="{'menudropdown':false}"  :class="[menudropdown ? 'bg-slate-800 rounded-md' : '',menu ? '' : 'relative' ] ">
