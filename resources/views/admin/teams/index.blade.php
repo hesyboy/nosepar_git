@@ -30,6 +30,9 @@
                                 تخصص تیم
                             </th>
                             <th class="p-3 font-thin">
+                                اعضا تیم
+                            </th>
+                            <th class="p-3 font-thin">
                                 تاریخ ایجاد
                             </th>
                             <th class="p-3 font-thin">
@@ -41,22 +44,45 @@
                         @foreach ($teams as $team)
                         <tr class="p-2 bg-white">
                             <td class="p-3">
-                                {{ $team->id }}
+                                    {{ $team->id }}
                             </td>
                             <td class="p-3">
-                                {{ $team->name }}
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ $team->name }}
+                                </span>
                             </td>
                             <td class="p-3">
-                                {{ $team->owner }}
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ $team->owner->first_name }} {{ $team->owner->last_name }}
+                                </span>
                             </td>
                             <td class="p-3">
-                                {{ $team->experts }}
+                                @foreach ($team->teamExperts as $teamExperts)
+                                    <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                        {{ $teamExperts->expert->title}}
+                                    </span>
+                                @endforeach
                             </td>
                             <td class="p-3">
-                                {{ $team->created_at }}
+                                @foreach ($team->teamMembers as $teamMember)
+                                    <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                        {{ $teamMember->User->first_name}} {{ $teamMember->User->last_name}}
+                                    </span>
+                                @endforeach
                             </td>
                             <td class="p-3">
-                                ...
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ $team->created_at }}
+                                </span>
+                            </td>
+                            <td class="p-3">
+                                <form action="{{route('admin.teams.delete',$team->id)}}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="px-4 py-1 bg-red-500 text-white rounded-md">
+                                        حذف تیم
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

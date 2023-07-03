@@ -89,17 +89,20 @@ Route::prefix('/panel')->middleware(['auth','register.email.verify','user.comple
 
 
 
-Route::prefix('/admin')->middleware('auth')->group(function(){
+Route::prefix('/admin')->middleware(['auth','admin'])->group(function(){
     Route::get('/',[AdminController::class,'index'])->name('admin.index');
     Route::prefix('/users')->group(function(){
         Route::get('/',[UserController::class,'index'])->name('admin.users.index');
+        Route::delete('/delete/{code}',[UserController::class,'delete'])->name('admin.users.delete');
     });
     Route::prefix('/teams')->group(function(){
         Route::get('/',[AdminTeamController::class,'index'])->name('admin.teams.index');
+        Route::delete('/delete/{id}',[AdminTeamController::class,'delete'])->name('admin.teams.delete');
         Route::prefix('/experts')->group(function(){
             Route::get('/',[TeamExpertController::class,'index'])->name('admin.teams.experts.index');
             Route::get('/create',[TeamExpertController::class,'create'])->name('admin.teams.experts.create');
             Route::post('/store',[TeamExpertController::class,'store'])->name('admin.teams.experts.store');
+            Route::delete('/delete/{id}',[TeamExpertController::class,'delete'])->name('admin.teams.experts.delete');
         });
     });
 

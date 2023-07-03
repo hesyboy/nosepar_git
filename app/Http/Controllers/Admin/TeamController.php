@@ -14,5 +14,12 @@ class TeamController extends Controller
         return view('admin.teams.index',compact('teams'));
     }
 
+    public function delete($id){
+        $team=Team::find($id);
+        $team->delete();
+        toast('انجام شد','success');
+        return redirect()->back();
+    }
+
 
 }

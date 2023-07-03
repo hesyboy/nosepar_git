@@ -12,4 +12,11 @@ class UserController extends Controller
         $users=User::all();
         return view('admin.users.index',compact('users'));
     }
+
+    public function delete($code){
+        $user=User::where('code',$code)->first();
+        $user->delete();
+        toast('انجام شد','success');
+        return redirect()->back();
+    }
 }

@@ -42,4 +42,12 @@ class TeamExpertController extends Controller
     }
 
 
+    public function delete($id){
+        $expert=Expert::find($id);
+        $expert->delete();
+        toast('انجام شد','success');
+        return redirect()->back();
+    }
+
+
 }

@@ -29,6 +29,9 @@
                                 نام تخصص
                             </th>
                             <th class="p-3 font-thin">
+                                تعداد متخصص
+                            </th>
+                            <th class="p-3 font-thin">
                                 تعداد تیم
                             </th>
                             <th class="p-3 font-thin">
@@ -47,16 +50,33 @@
                                 {{-- {{ $expert->id }} --}}
                             </td>
                             <td class="p-3">
-                                {{ $expert->title }}
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ $expert->title }}
+                                </span>
                             </td>
                             <td class="p-3">
-                                25
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ count($expert->userexperts)}}    
+                                </span>
                             </td>
                             <td class="p-3">
-                                {{ $expert->created_at }}
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ count($expert->teamExperts)}}    
+                                </span>
                             </td>
                             <td class="p-3">
-                                ...
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ $expert->created_at }}
+                                </span>
+                            </td>
+                            <td class="p-3">
+                                <form action="{{route('admin.teams.experts.delete',$expert->id)}}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="px-4 py-1 bg-red-500 text-white rounded-md">
+                                        حذف تخصص
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

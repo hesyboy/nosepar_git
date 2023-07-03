@@ -13,4 +13,13 @@ class Expert extends Model
         'title',
         'image',
     ];
+
+    public function teamexperts(){
+        return $this->hasMany(TeamExpert::class,'expert_id','id');
+    }
+
+    public function userexperts(){
+        return $this->hasMany(UserExpert::class,'expert_id','id');
+    }
+
 }

@@ -25,6 +25,13 @@ class Team extends Model
     }
 
     public function teamExperts(){
-        return $this->hasMany(TeamExpert::class);
+        return $this->hasMany(TeamExpert::class,'team_id','id');
+    }
+    public function owner(){
+        return $this->belongsTo(User::class,'owner_id','id')
+        ->withDefault([
+            'first_name' => '----',
+            'last_name'=>'---',
+        ]);
     }
 }

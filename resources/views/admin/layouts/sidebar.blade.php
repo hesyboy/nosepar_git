@@ -66,7 +66,7 @@
 
             <li x-data="{'menudropdown':false}"  :class="[menudropdown ? 'bg-slate-800 rounded-md' : '',menu ? '' : 'relative' ] ">
                 <a @click="menudropdown=!menudropdown" class="flex items-center gap-5 p-3 rounded-md hover:bg-slate-800 cursor-pointer" >
-                    <i class="flex text-2xl fi fi-rr-user"></i>
+                    <i class="flex text-2xl fi fi-rr-bolt"></i>
                     <span x-show="menu">
                         مدیریت تخصص ها
                     </span>
@@ -87,7 +87,7 @@
 
             <li x-data="{'menudropdown':false}"  :class="[menudropdown ? 'bg-slate-800 rounded-md' : '',menu ? '' : 'relative' ] ">
                 <a @click="menudropdown=!menudropdown" class="flex items-center gap-5 p-3 rounded-md hover:bg-slate-800 cursor-pointer" >
-                    <i class="flex text-2xl fi fi-rr-user"></i>
+                    <i class="flex text-2xl fi fi-rr-megaphone"></i>
                     <span x-show="menu">
                         مدیریت چالش ها
                     </span>

@@ -39,10 +39,11 @@
                         <label for="">عنوان تخصص تیم  </label>
                         <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
                     </div>
-                </div>
 
-                <div class="p-2">
-                    <input type="file" name="image">
+                    <div class="p-2">
+                        <input type="file" name="image">
+                    </div>
+
                 </div>
 
             </div>
