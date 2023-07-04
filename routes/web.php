@@ -109,6 +109,7 @@ Route::prefix('/admin')->middleware(['auth','admin'])->group(function(){
     Route::prefix('/challenge')->group(function(){
         Route::get('/',[AdminChallengeController::class,'index'])->name('admin.challenge.index');
         Route::get('/create',[AdminChallengeController::class,'create'])->name('admin.challenge.create');
+        Route::post('/store',[AdminChallengeController::class,'store'])->name('admin.challenge.store');
     });
 
     Route::prefix('/notification')->group(function(){

@@ -17,7 +17,7 @@ class CreateTeamsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->foreignId('owner_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('experts')->nullable();
             $table->string('profile_image')->default('/assets/images/default.jpg');

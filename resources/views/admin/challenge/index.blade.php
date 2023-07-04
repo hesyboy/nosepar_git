@@ -29,10 +29,13 @@
                                 نام چالش
                             </th>
                             <th class="p-3 font-thin">
-                                تعداد تیم
+                                برگزارکنندگان
                             </th>
                             <th class="p-3 font-thin">
-                                تعداد متخصص
+                                تاریخ شروع
+                            </th>
+                            <th class="p-3 font-thin">
+                                تاریخ پایان
                             </th>
                             <th class="p-3 font-thin">
                                 تاریخ ایجاد
@@ -43,22 +46,35 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ([] as $expert)
+                        @foreach ($challenges as $challenge)
                         <tr class="p-2 bg-white">
                             <td class="p-3">
-                                <img class="h-14 w-14 rounded-md" src="{{$expert->image}}" alt="">
+                                <img class="h-14 w-14 rounded-md" src="{{$challenge->image}}" alt="">
                             </td>
                             <td class="p-3">
-                                {{ $expert->title }}
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ $challenge->title }}
+                                </span>
                             </td>
                             <td class="p-3">
-                                25
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ $challenge->organizer }}
+                                </span>
                             </td>
                             <td class="p-3">
-                                35
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ $challenge->start_date }}
+                                </span>
                             </td>
                             <td class="p-3">
-                                {{ $expert->created_at }}
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ $challenge->end_date }}
+                                </span>
+                            </td>
+                            <td class="p-3">
+                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                    {{ $challenge->created_at }}
+                                </span>
                             </td>
                             <td class="p-3">
                                 ...

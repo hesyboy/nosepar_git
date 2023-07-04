@@ -30,7 +30,7 @@
         @endif
 
         <div class="w-full flex items-center p-5 bg-white rounded-md">
-            <form action="{{ route('admin.teams.experts.store') }}" method="post" class="w-full gap-5" enctype="multipart/form-data">
+            <form action="{{ route('admin.challenge.store') }}" method="post" class="w-full gap-5" enctype="multipart/form-data">
                 @csrf
             <div class="w-full flex gap-5 items-start">
                 <div class="w-full grid grid-cols-1 items-center gap-5">
@@ -46,7 +46,7 @@
                             <label for="">
                                 قوانین و مقررات چالش
                             </label>
-                            <textarea type="text" name="description" rows="5" cols="9" value="" class="p-2 bg-slate-100 border rounded-md outline-none "></textarea>
+                            <textarea type="text" name="law" rows="5" cols="9" value="" class="p-2 bg-slate-100 border rounded-md outline-none "></textarea>
                         </div>
                         <div class="flex flex-col gap-1 ">
                             <label for="">توضیحات چالش   </label>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="flex flex-col gap-1 ">
                             <label for="">جوایز نقدی و غیرنقدی چالش   </label>
-                            <textarea type="text" name="description" rows="5" cols="9" value="" class="p-2 bg-slate-100 border rounded-md outline-none "></textarea>
+                            <textarea type="text" name="award" rows="5" cols="9" value="" class="p-2 bg-slate-100 border rounded-md outline-none "></textarea>
                         </div>
                     </div>
 
@@ -63,25 +63,25 @@
                     <div class="grid grid-cols-4 gap-3">
                         <div class="flex flex-col gap-1">
                             <label for="">لینک داده های چالش   </label>
-                            <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
+                            <input type="text" name="data_link" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
                         </div>
                         <div class="flex flex-col gap-1">
                             <label for="">لینک دیسکورد     </label>
-                            <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
+                            <input type="text" name="discord" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
                         </div>
                         <div class="flex flex-col gap-1">
                             <label for="">زمان شروع چالش     </label>
-                            <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
+                            <input type="date" name="start_date" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
                         </div>
                         <div class="flex flex-col gap-1">
                             <label for="">زمان پایان چالش      </label>
-                            <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
+                            <input type="date" name="end_date" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
                         </div>
                     </div>
 
                     <div class="flex flex-col gap-1">
                         <label for="">برگزارکنندگان  چالش      </label>
-                        <input type="text" name="title" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
+                        <input type="text" name="organizer" value="" class="p-2 bg-slate-100 border rounded-md outline-none">
                     </div>
 
                     <div class="p-2 mt-3">
