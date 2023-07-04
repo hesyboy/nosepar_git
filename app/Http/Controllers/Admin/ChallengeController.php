@@ -43,4 +43,12 @@ class ChallengeController extends Controller
         toast('انجام شد','success');
         return redirect()->route('admin.challenge.index');
     }
+
+
+    public function delete($id){
+        $challenge=Challenge::find($id);
+        $challenge->delete();
+        toast('انجام شد','success');
+        return redirect()->back();
+    }
 }
