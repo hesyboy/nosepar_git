@@ -101,6 +101,8 @@ Route::prefix('/admin')->middleware(['auth','admin'])->group(function(){
         Route::prefix('/experts')->group(function(){
             Route::get('/',[TeamExpertController::class,'index'])->name('admin.teams.experts.index');
             Route::get('/create',[TeamExpertController::class,'create'])->name('admin.teams.experts.create');
+            Route::get('/edit/{id}',[TeamExpertController::class,'edit'])->name('admin.teams.experts.edit');
+            Route::put('/update/{id}',[TeamExpertController::class,'update'])->name('admin.teams.experts.update');
             Route::post('/store',[TeamExpertController::class,'store'])->name('admin.teams.experts.store');
             Route::delete('/delete/{id}',[TeamExpertController::class,'delete'])->name('admin.teams.experts.delete');
         });

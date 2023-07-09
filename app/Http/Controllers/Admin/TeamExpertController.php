@@ -34,7 +34,33 @@ class TeamExpertController extends Controller
             $imgName=rand(100000,99999999);
             $request->image->storeAs('public/experts/images', $imgName.'.'.$request->image->extension());
             $expert->image='/storage/experts/images/'.$imgName.'.'.$request->file('image')->extension();
+        }
+        $expert->save();
+        toast('انجام شد','success');
+        return redirect()->route('admin.teams.experts.index');
+    }
 
+
+    public function edit($id){
+        $expert=Expert::find($id);
+        return view('admin.teams.experts.edit',compact('expert'));
+    }
+
+    public function update(Request $request,$id){
+        // dd($request->image);
+        $validated=$request->validate([
+            'title' => 'required',
+
+        ]);
+
+
+        $expert=Expert::find($id);
+        $expert->title=$request->title;
+
+        if($request->image){
+            $imgName=rand(100000,99999999);
+            $request->image->storeAs('public/experts/images', $imgName.'.'.$request->image->extension());
+            $expert->image='/storage/experts/images/'.$imgName.'.'.$request->file('image')->extension();
         }
         $expert->save();
         toast('انجام شد','success');

@@ -76,11 +76,14 @@
                                     {{ $challenge->created_at }}
                                 </span>
                             </td>
-                            <td class="p-3">
+                            <td class="p-3 flex flex-col gap-2">
+                                <a href="" class="w-full py-1 px-4 rounded-md bg-blue-600 text-white text-center">
+                                    اصلاح
+                                </a>
                                 <form action="{{route('admin.challenge.delete',$challenge->id)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="px-4 py-1 bg-red-500 text-white rounded-md">
+                                    <button type="submit" class="w-full px-4 py-1 bg-red-500 text-white rounded-md">
                                         حذف چالش
                                     </button>
                                 </form>

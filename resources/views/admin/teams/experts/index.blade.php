@@ -56,12 +56,12 @@
                             </td>
                             <td class="p-3">
                                 <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
-                                    {{ count($expert->userexperts)}}    
+                                    {{ count($expert->userexperts)}}
                                 </span>
                             </td>
                             <td class="p-3">
                                 <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
-                                    {{ count($expert->teamExperts)}}    
+                                    {{ count($expert->teamExperts)}}
                                 </span>
                             </td>
                             <td class="p-3">
@@ -69,11 +69,14 @@
                                     {{ $expert->created_at }}
                                 </span>
                             </td>
-                            <td class="p-3">
+                            <td class="p-3 flex flex-col gap-2">
+                                <a href="{{route('admin.teams.experts.edit',$expert->id)}}" class="w-full py-1 px-4 rounded-md bg-blue-600 text-white text-center">
+                                    اصلاح
+                                </a>
                                 <form action="{{route('admin.teams.experts.delete',$expert->id)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="px-4 py-1 bg-red-500 text-white rounded-md">
+                                    <button type="submit" class="w-full px-4 py-1 bg-red-500 text-white rounded-md">
                                         حذف تخصص
                                     </button>
                                 </form>
