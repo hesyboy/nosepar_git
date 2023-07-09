@@ -112,6 +112,8 @@ Route::prefix('/admin')->middleware(['auth','admin'])->group(function(){
         Route::get('/',[AdminChallengeController::class,'index'])->name('admin.challenge.index');
         Route::get('/create',[AdminChallengeController::class,'create'])->name('admin.challenge.create');
         Route::post('/store',[AdminChallengeController::class,'store'])->name('admin.challenge.store');
+        Route::get('/edit/{id}',[AdminChallengeController::class,'edit'])->name('admin.challenge.edit');
+        Route::post('/update/{id}',[AdminChallengeController::class,'update'])->name('admin.challenge.update');
         Route::delete('/delete/{id}',[AdminChallengeController::class,'delete'])->name('admin.challenge.delete');
 
     });

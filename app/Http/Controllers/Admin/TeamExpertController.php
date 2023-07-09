@@ -62,7 +62,7 @@ class TeamExpertController extends Controller
             $request->image->storeAs('public/experts/images', $imgName.'.'.$request->image->extension());
             $expert->image='/storage/experts/images/'.$imgName.'.'.$request->file('image')->extension();
         }
-        $expert->save();
+        $expert->update();
         toast('انجام شد','success');
         return redirect()->route('admin.teams.experts.index');
     }

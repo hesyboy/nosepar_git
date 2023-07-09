@@ -77,7 +77,7 @@
                                 </span>
                             </td>
                             <td class="p-3 flex flex-col gap-2">
-                                <a href="" class="w-full py-1 px-4 rounded-md bg-blue-600 text-white text-center">
+                                <a href="{{route('admin.challenge.edit',$challenge->id)}}" class="w-full py-1 px-4 rounded-md bg-blue-600 text-white text-center">
                                     اصلاح
                                 </a>
                                 <form action="{{route('admin.challenge.delete',$challenge->id)}}" method="post">
