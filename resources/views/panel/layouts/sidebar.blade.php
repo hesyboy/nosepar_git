@@ -1,10 +1,10 @@
 
-<div class=" "  >
-    <div class="flex items-center justify-center pt-3 pb-6 h-[200px] bg-blue-600"  >
-        <div class="relative flex items-center w-full gap-8 px-3 py-5 " >
+<div class=" z-50"  >
+    <div class="flex items-center justify-center pt-3 pb-6 h-[120px] bg-blue-600"  >
+        <div class="relative flex items-center w-full gap-3 px-3 py-3 " >
             <div class="w-full flex flex-col items-center gap-3 "  >
                 <div class="w-full flex items-center justify-center">
-                    <img class="w-32" src="{{ asset('assets/images/logo-new.svg') }}" alt="">
+                    <img class="w-20" src="{{ asset('assets/images/logo-new.svg') }}" alt="">
                 </div>
                 <div class="flex gap-3 items-center">
                     <h2 class="text-xl text-white">
@@ -28,32 +28,32 @@
     <div class="flex flex-col justify-between h-full " @mouseover="menu=true" @mouseover.away="menu=false">
         <div class="flex flex-col gap-3 mt-2 p-3">
 
-            <div class="h-[100px]">
-                <a href="{{route('panel.account.index')}}" class="flex flex-col items-center gap-2 rounded-md w-full" :class="menu ? 'bg-slate-100 py-3 px-2 -mt-10' : 'p-1' ">
-                    <img src="{{ asset(auth()->user()->profile_image) }}" alt="" class="h-14 w-14">
-                    <div class="flex flex-col items-center gap-1">
+            <div class="h-[70px]">
+                <a href="{{route('panel.account.index')}}" class="flex flex-col items-center gap-1 rounded-md w-full py-3 px-2" :class="menu ? 'bg-slate-100 -mt-6' : 'p-1' ">
+                    <img src="{{ asset(auth()->user()->profile_image) }}" alt="" class="h-12 w-12">
+                    <div class="flex flex-col items-center">
                         <div class="text-xl font-bold" x-show="menu" x-cloak>
                             {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
                         </div>
-                        <div class="grid items-center grid-cols-3 gap-3 py-1 w-max" >
+                        <div class="grid items-center grid-cols-3 gap-3 py-1 w-max" x-show="menu" x-cloak>
                             @foreach (auth()->user()->userExperts as $userExpert)
                                 <div x-data="{popup:false}" @mouseover="popup=true" @mouseleave="popup=false"
-                                    class="relative flex items-center bg-white justify-center  text-xs text-white uppercase  rounded-full cursor-pointer h-10 w-10  hover:z-50 border-2 border-gray-200 hover:border-2 hover:border-blue-500">
-                                    <img class="rounded-full" src="{{asset($userExpert->expert->image)}}" alt="" >
+                                    class="relative flex items-center bg-white justify-center  text-xs text-white uppercase  rounded-full cursor-pointer h-8 w-8  hover:z-50 border-2 border-gray-200 hover:border-2 hover:border-blue-500">
+                                    <img class="rounded-md" src="{{asset($userExpert->expert->image)}}" alt="" >
                                     <span class="absolute -top-7 text-white bg-blue-600 rounded px-2 py-0.5 w-max" x-show="popup">
                                         {{$userExpert->expert->title}}
                                     </span>
                                 </div>
                             @endforeach
                         </div>
-                        <div class="text-xs font-bold" x-show="menu" x-cloak>
+                        {{-- <div class="text-xs font-bold" x-show="menu" x-cloak>
                              کد انحصاری : {{ auth()->user()->code }}
-                        </div>
+                        </div> --}}
                     </div>
                 </a>
             </div>
-            <div class="">
-                <ul class="flex flex-col gap-5 text-base " :class="menu ? '' : 'items-center' ">
+            <div class="mt-12">
+                <ul class="flex flex-col gap-2 text-base " :class="menu ? '' : 'items-center' ">
                     {{-- <li>
                         <a href="{{ route('panel.index') }}" class="flex items-center gap-5 p-3 hover:bg-slate-100 rounded-md
                         @if (request()->routeIs('panel.index'))
@@ -112,7 +112,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('site.index') }}" class="flex items-center gap-5 p-2  rounded-m text-slate-500" >
+                        <a class="flex items-center gap-5 p-2  rounded-m text-slate-500" >
                         @if (request()->routeIs('panel.123'))
                             <img src="{{ asset('assets/images/panel-menu-academy.png') }}" alt="">
                         @else
@@ -125,7 +125,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('site.index') }}" class="flex items-center gap-5 p-2  rounded-m text-slate-500" >
+                        <a class="flex items-center gap-5 p-2  rounded-m text-slate-500" >
                         @if (request()->routeIs('panel.123'))
                             <img src="{{ asset('assets/images/panel-menu-mali.png') }}" alt="">
                         @else

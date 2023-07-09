@@ -32,7 +32,7 @@
                 </li>
                 <li>
                     <a href="" class="text-blue-600 font-bold">
-                        مساله چالش همراه اول
+                        {{$challenge->title}}
                     </a>
                 </li>
 
@@ -45,13 +45,14 @@
                     حل چالش
                 </div>
                 <div class="text-4xl">
-                    مشتریان همراه اول
+                    {{$challenge->title}}
                 </div>
                 <div class="text-xl mt-8">
-                    جوایز : 100 میلیون تومان وجه نقد برای 3 نفر
+                    جوایز : {{$challenge->award}}
                 </div>
                 <div class="text-xl">
-                    تا تاریخ 15 خرداد 1401
+                    تا تاریخ :
+                    {{$challenge->end_date}}
                 </div>
             </div>
         </div>

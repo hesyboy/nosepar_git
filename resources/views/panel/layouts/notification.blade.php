@@ -1,4 +1,4 @@
-<div class="fixed top-0 left-0 w-full pr-20 z-50" x-data="{notif:true}" x-show="notif">
+<div class="fixed top-0 left-0 w-full pr-20 z-40" x-data="{notif:true}" x-show="notif">
     <div class="">
         @if (session('success'))
             <div class="" >

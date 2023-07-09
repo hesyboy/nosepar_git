@@ -5,7 +5,7 @@
 
 <div>
 
-    @livewire('panel.challenge.show-challenge')
+    @livewire('panel.challenge.show-challenge',[$challenge])
 
 </div>
 

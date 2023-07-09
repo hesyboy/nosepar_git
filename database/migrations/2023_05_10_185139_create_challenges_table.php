@@ -12,7 +12,7 @@ class CreateChallengesTable extends Migration
      * @return void
      */
 
-     
+
     public function up()
     {
         Schema::create('challenges', function (Blueprint $table) {
@@ -27,6 +27,7 @@ class CreateChallengesTable extends Migration
             $table->string('end_date')->nullable();
             $table->string('organizer')->nullable();
             $table->string('image')->default('/assets/images/default.jpg');
+            $table->integer('visits')->default(0);
             $table->timestamps();
         });
     }

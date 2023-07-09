@@ -8,7 +8,7 @@
                 <div class="flex items-center justify-center gap-2 font-iranyekan-regular">
                     <img src="{{asset('assets/images/icons_eye.svg')}}" alt="">
                     <span class="text-xs font-bold">
-                        2,315
+                        {{$challenge->visits}}
                     </span>
                 </div>
                 <div class="flex items-center justify-center gap-2 font-iranyekan-regular">
@@ -32,7 +32,7 @@
             </div>
             <hr >
             <div class="text-base font-bold text-center ">
-                حل چالش مشتریان همراه اول
+                {{$challenge->title}}
             </div>
             <hr>
 
@@ -41,7 +41,7 @@
                     جایزه نقدی :
                 </div>
                 <div class="text-xs font-bold text-center">
-                    100 میلیون وجه نقد برای 3 نفر
+                    {{$challenge->award}}
                 </div>
             </div>
             <div class="flex items-center justify-between text-sm font-bold my-1">
@@ -59,8 +59,7 @@
                     برگزار کنندگان :
                 </div>
                 <div class="flex gap-1">
-                    <img class="h-10" src="{{asset('assets/images/rate1.svg')}}" alt="">
-                    <img class="h-10" src="{{asset('assets/images/rate2.svg')}}" alt="">
+                    {{$challenge->organizer}}
                 </div>
             </div>
 
@@ -72,13 +71,16 @@
                     <div class="flex items-center gap-1 px-2 py-1 text-[10px] text-white rounded-2xl bg-emerald-600 font-light">
                         <img src="{{asset('assets/images/icons8_time.svg')}}" alt="">
                         <span>
-                            شروع از 15 فروردین 1401
+                            شروع از :
+                            {{$challenge->start_date}}
                         </span>
                     </div>
                     <div class="flex items-center gap-1 px-2 py-1 text-[10px] text-white bg-red-500 rounded-2xl font-light">
                         <img src="{{asset('assets/images/icons8_time.svg')}}" alt="" class="z-0">
                         <span>
-                            فاز اول: 40 روز مانده
+                            پایان فاز اول :
+                            {{$challenge->end_date}}
+
                         </span>
                     </div>
                 </div>
@@ -100,12 +102,11 @@
             <hr>
 
             <div>
-                <div class="flex items-center justify-center px-3 py-4 text-sm text-white bg-blue-600 hover:bg-blue-700 cursor-pointer rounded-full">
-
+                <a href="{{route('panel.challenge.show',$challenge->id)}}" class="flex items-center justify-center px-3 py-4 text-sm text-white bg-blue-600 hover:bg-blue-700 cursor-pointer rounded-full">
                     <span>
                         مشاهده چالش
                     </span>
-                </div>
+                </a>
             </div>
 
 

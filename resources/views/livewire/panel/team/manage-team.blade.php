@@ -31,10 +31,10 @@
 
         <div class="bg-white rounded-md shadow " >
             <div class="flex items-start justify-between p-4">
-                <div>
+                <div class="flex flex-col gap-3">
                     <div class="flex items-center gap-4 py-1">
                         <div>
-                            <img src="{{ asset($team->profile_image) }}" alt="" class="w-20 h-20 rounded-full">
+                            <img src="{{ asset($team->profile_image) }}" alt="" class="w-20 h-20 rounded-md">
                         </div>
                         <div class="flex flex-col gap-4">
                             <div class="flex items-center gap-5">
@@ -59,28 +59,23 @@
                         </div>
 
                     </div>
-                    <div class="my-3">
-                        <div class="flex gap-5" :class="menu ? 'flex' : 'hidden' ">
-                            @if ($team->kaggle)
-                                <a href="{{ asset($team->kaggle) }}">
-                                    <img src="http://127.0.0.1:8000/assets/images/telegram-blue.png" alt="" class="w-5 h-5">
-                                </a>
-                            @endif
-                            @if ($team->linkedin)
-                                <a href="{{ asset($team->linkedin) }}">
-                                    <img src="http://127.0.0.1:8000/assets/images/linkdin-blue.png" alt="" class="w-5 h-5">
-                                </a>
-                            @endif
-                            @if ($team->github)
-                                <a href="{{ asset($team->github) }}">
-                                    <img src="http://127.0.0.1:8000/assets/images/github-blue.png" alt="" class="w-5 h-5">
-                                </a>
-                            @endif
+
+                    <div>
+                        <div class="flex justify-start gap-5 px-2">
+                            <a href="http://{{$team->kaggle}}">
+                                <img src="{{asset('assets/images/telegram-blue.png')}}" alt="" class="w-7 h-7">
+                            </a>
+                            <a href="http://{{$team->linkedin}}">
+                                <img src="{{asset('assets/images/linkdin-blue.png')}}" alt="" class="w-7 h-7">
+                            </a>
+                            <a href="http://{{$team->github}}">
+                                <img src="{{asset('assets/images/github-blue.png')}}" alt="" class="w-7 h-7">
+                            </a>
                         </div>
                     </div>
-                    <div class="mt-3">
-                        <span class="text-base font-iranyekan-reqular">
-                            {{$team->title}}
+                    <div class="">
+                        <span class="font-iranyekan-reqular">
+                            {{ Str::limit($team->description, 60) }}
                         </span>
                     </div>
                 </div>
@@ -288,7 +283,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div>
+                                {{-- <div>
                                     <div class="flex flex-col gap-2">
                                         <span>تصویر کاور</span>
                                         <label class=" w-full p-3 rounded-md border-2 border-dashed border-blue-500 outline-blue-600 text-sm text-right cursor-pointer">
@@ -303,7 +298,7 @@
                                         </label>
 
                                     </div>
-                                </div>
+                                </div> --}}
 
                             </form>
                         </div>
@@ -402,35 +397,31 @@
                                             border-gray-300
                                         @endif
                                         ">
-                                            <div class="flex items-center gap-2 justify-between">
+                                            <div class="">
                                                 {{-- <input type="checkbox" wire:model="userMemberSelector.{{$key}}" value="{{$expert->id}}" class="hidden checkbox h-5 w-5 bg-white" > --}}
-                                                <div class="w-full flex gap-1 items-center text-blue-600 text-xs">
-                                                    <img class="h-7 w-7 rounded-full" src="{{asset('/assets/images/default.jpg')}}" alt="">
-                                                    <span>{{$expert->title}} </span>
+                                                <div class="flex justify-between gap-1 items-center text-blue-600 text-xs mb-2">
+                                                    <img class="h-7 w-7 rounded-full" src="{{asset($expert->image)}}" alt="">
+                                                    <div class="flex gap-1">
+                                                        @if (in_array($expert->id,$selectedExperts))
+
+                                                            <label class="cursor-pointer">
+                                                                <img src="{{ asset('assets/images/icons8_upload.svg') }}" alt="">
+                                                                <input type="file" multiple class="hidden">
+                                                            </label>
+                                                            <span wire:click="removeTeamExpret({{ $expert->id }})" class="cursor-pointer">
+                                                                <img src="{{ asset('assets/images/icons_close.svg') }}" alt="">
+                                                            </span>
+                                                        @else
+                                                            <span wire:click="addTeamExpret({{ $expert->id }})">
+                                                                <img src="{{ asset('assets/images/icons_select.svg') }}" alt="">
+                                                            </span>
+                                                        @endif
+                                                    </div>
                                                 </div>
-                                                <div class="flex gap-1">
-
-                                                    {{-- <span>
-                                                        U
-                                                    </span> --}}
-
-                                                    @if (in_array($expert->id,$selectedExperts))
-
-                                                        <label class="cursor-pointer">
-                                                            <img src="{{ asset('assets/images/icons8_upload.svg') }}" alt="">
-                                                            <input type="file" multiple class="hidden">
-                                                        </label>
-                                                        <span wire:click="removeTeamExpret({{ $expert->id }})" class="cursor-pointer">
-                                                            <img src="{{ asset('assets/images/icons_close.svg') }}" alt="">
-                                                        </span>
-
-
-                                                    @else
-                                                        <span wire:click="addTeamExpret({{ $expert->id }})">
-                                                            <img src="{{ asset('assets/images/icons_select.svg') }}" alt="">
-                                                        </span>
-                                                    @endif
+                                                <div class="break-all max-w-max">
+                                                    <p class="">{{$expert->title}} </p>
                                                 </div>
+
 
                                             </div>
                                         </div>

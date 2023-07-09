@@ -26,19 +26,19 @@
             </div>
             <div class="z-0 grid grid-cols-2 gap-5 p-3 pb-5">
 
-                @foreach ([1,2,3,4] as $item)
-                    @livewire('panel.challenge.main-card')
+                @foreach ($allChallenge as $item)
+                    @livewire('panel.challenge.main-card',[$item])
                 @endforeach
 
             </div>
         </div>
 
         <div  class="p-5 mt-3 bg-white rounded-md shadow ">
-            <div>
+            {{-- <div>
                 <span class="text-lg font-bold ">
                     همه چالش ها
                 </span>
-            </div>
+            </div> --}}
             {{-- <div class="grid grid-cols-4 gap-5 pb-5 text-base text-slate-300">
 
                 <div class="px-3 py-4 border rounded-lg">
@@ -54,7 +54,7 @@
                     فیلتر براساس دسته ‌بندی
                 </div>
             </div> --}}
-            <div>
+            {{-- <div>
                 <div class="z-0 grid grid-cols-4 gap-5">
 
                     @foreach ([1,2,3,4,5,6,7,8] as $item)
@@ -62,7 +62,7 @@
                     @endforeach
 
                 </div>
-            </div>
+            </div> --}}
         </div>
 
 

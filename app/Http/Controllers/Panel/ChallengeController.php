@@ -11,11 +11,12 @@ class ChallengeController extends Controller
 {
     public function index(){
         // $myChallenge=Challenge::where('owner',Auth::id())->get();
-        // $allChallenge=Challenge::all();
-        return view('panel.challenge.index');
+        $allChallenge=Challenge::all();
+        return view('panel.challenge.index',compact('allChallenge'));
     }
 
-    public function show(){
-        return view('panel.challenge.show');
+    public function show($id){
+        $challenge=Challenge::find($id);
+        return view('panel.challenge.show',compact('challenge'));
     }
 }

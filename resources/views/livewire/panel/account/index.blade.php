@@ -42,10 +42,10 @@
 
         <div class="bg-white rounded-md shadow " >
             <div class="flex items-start justify-between p-4">
-                <div>
+                <div class="flex flex-col gap-5">
                     <div class="flex items-center gap-4 py-1">
                         <div>
-                            <img src="{{ asset($user->profile_image) }}" alt="" class="w-20 h-20 rounded-full">
+                            <img src="{{ asset($user->profile_image) }}" alt="" class="w-24 h-24 rounded-md">
                         </div>
                         <div class="flex flex-col gap-4">
                             <div class="flex items-center gap-5">
@@ -59,8 +59,8 @@
                             <div class="flex gap-3">
                                 @foreach ($user->userExperts as $userExpert)
                                     <div x-data="{popup:false}" @mouseover="popup=true" @mouseleave="popup=false"
-                                        class="relative flex items-center bg-white justify-center  text-xs text-white uppercase  rounded-full cursor-pointer h-10 w-10  hover:z-50 border-2 border-gray-200 hover:border-2 hover:border-blue-500">
-                                        <img class="rounded-full" src="{{asset($userExpert->expert->image)}}" alt="" >
+                                        class="relative flex items-center bg-white justify-center  text-xs text-white uppercase  rounded-md overflow-hidden cursor-pointer h-10 w-10  hover:z-50 border-2 border-gray-200 hover:border-2 hover:border-blue-500">
+                                        <img class="" src="{{asset($userExpert->expert->image)}}" alt="" >
                                         <span class="absolute -top-7 text-white bg-blue-600 rounded px-2 py-0.5 w-max" x-show="popup">
                                             {{$userExpert->expert->title}}
                                         </span>
@@ -70,23 +70,22 @@
                         </div>
 
                     </div>
-                    <div class="my-3">
-                        <div class="flex gap-5" :class="menu ? 'flex' : 'hidden' ">
-                            <a href="{{$user->kaggle}}">
-                                <img src="http://127.0.0.1:8000/assets/images/telegram-blue.png" alt="" class="w-5 h-5">
+                    <div>
+                        <div class="flex justify-start gap-5 px-2">
+                            <a href="http://{{$user->kaggle}}">
+                                <img src="{{asset('assets/images/telegram-blue.png')}}" alt="" class="w-7 h-7">
                             </a>
-                            <a href="{{$user->linkedin}}">
-                                <img src="http://127.0.0.1:8000/assets/images/linkdin-blue.png" alt="" class="w-5 h-5">
+                            <a href="http://{{$user->linkedin}}">
+                                <img src="{{asset('assets/images/linkdin-blue.png')}}" alt="" class="w-7 h-7">
                             </a>
-                            <a href="{{$user->github}}">
-                                <img src="http://127.0.0.1:8000/assets/images/github-blue.png" alt="" class="w-5 h-5">
+                            <a href="http://{{$user->github}}">
+                                <img src="{{asset('assets/images/github-blue.png')}}" alt="" class="w-7 h-7">
                             </a>
                         </div>
                     </div>
-                    <div class="my-3">
-                        <span class="text-base font-iranyekan-reqular">
-                            {{$user->title}}
-
+                    <div class="">
+                        <span class="font-iranyekan-reqular">
+                            {{ Str::limit($user->description, 60) }}
                         </span>
                     </div>
                 </div>
@@ -295,35 +294,33 @@
                                             border-gray-300
                                         @endif
                                         ">
-                                            <div class="flex items-center gap-2 justify-between">
+
+
+                                            <div class="">
                                                 {{-- <input type="checkbox" wire:model="userMemberSelector.{{$key}}" value="{{$expert->id}}" class="hidden checkbox h-5 w-5 bg-white" > --}}
-                                                <div class="w-full flex gap-1 items-center text-blue-600 text-xs">
-                                                    <img class="h-7 w-7 rounded-full" src="{{asset('/assets/images/default.jpg')}}" alt="">
-                                                    <span>{{$expert->title}} </span>
+                                                <div class="flex justify-between gap-1 items-center text-blue-600 text-xs mb-2">
+                                                    <img class="h-7 w-7 rounded-full" src="{{asset($expert->image)}}" alt="">
+                                                    <div class="flex gap-1">
+                                                        @if (in_array($expert->id,$selectedExperts))
+
+                                                            <label class="cursor-pointer">
+                                                                <img src="{{ asset('assets/images/icons8_upload.svg') }}" alt="">
+                                                                <input type="file" multiple class="hidden">
+                                                            </label>
+                                                            <span wire:click="removeUserExpret({{ $expert->id }})" class="cursor-pointer">
+                                                                <img src="{{ asset('assets/images/icons_close.svg') }}" alt="">
+                                                            </span>
+                                                        @else
+                                                            <span wire:click="addUserExpret({{ $expert->id }})">
+                                                                <img src="{{ asset('assets/images/icons_select.svg') }}" alt="">
+                                                            </span>
+                                                        @endif
+                                                    </div>
                                                 </div>
-                                                <div class="flex gap-1">
-
-                                                    {{-- <span>
-                                                        U
-                                                    </span> --}}
-
-                                                    @if (in_array($expert->id,$selectedExperts))
-
-                                                        <label class="cursor-pointer">
-                                                            <img src="{{ asset('assets/images/icons8_upload.svg') }}" alt="">
-                                                            <input type="file" multiple class="hidden">
-                                                        </label>
-                                                        <span wire:click="removeUserExpret({{ $expert->id }})" class="cursor-pointer">
-                                                            <img src="{{ asset('assets/images/icons_close.svg') }}" alt="">
-                                                        </span>
-
-
-                                                    @else
-                                                        <span wire:click="addUserExpret({{ $expert->id }})">
-                                                            <img src="{{ asset('assets/images/icons_select.svg') }}" alt="">
-                                                        </span>
-                                                    @endif
+                                                <div class="break-all max-w-max">
+                                                    <p class="">{{$expert->title}} </p>
                                                 </div>
+
 
                                             </div>
                                         </div>
