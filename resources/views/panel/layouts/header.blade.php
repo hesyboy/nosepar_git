@@ -80,7 +80,7 @@
                 <a @click="toggle=!toggle" class="flex items-center gap-1 px-3 py-2 border-2 rounded-md cursor-pointer border-slate-100 hover:bg-slate-200">
                     <img src="{{asset('assets/images/panel-header-user.png')}}" alt="">
                 </a>
-                <div x-show="toggle" x-cloak class="absolute left-0 px-2 mt-1 bg-white rounded-md shadow-lg top-14 w-52">
+                <div x-show="toggle" x-cloak class="z-50 absolute left-0 px-2 mt-1 bg-white rounded-md shadow-lg top-14 w-52">
                     <ul class="flex flex-col">
                         <li class="px-2 py-4 border-b-2 border-slate-100">
                             <a class="text-base" href="{{route('panel.profile.show',auth()->user()->code)}}">
@@ -119,7 +119,7 @@
 <div class="px-3 py-3 pt-5">
     <div class="flex flex-col md:flex-row gap-3 items-center justify-between p-3 text-blue-800 bg-blue-100 rounded-md">
         <div class="text-base font-iranyekan-bold">
-            برای فعال سازی حساب نوسپار، پروفایل خود را تکمیل کنید!
+              اطلاعات پروفایل خود را تکمیل کنید !
         </div>
 
         <div class="flex items-center gap-3">

@@ -2493,6 +2493,15 @@ html {
 .h-screen {
   height: 100vh;
 }
+.h-11 {
+  height: 2.75rem;
+}
+.max-h-80 {
+  max-height: 20rem;
+}
+.max-h-60 {
+  max-height: 15rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -2596,6 +2605,12 @@ html {
 .w-screen {
   width: 100vw;
 }
+.w-16 {
+  width: 4rem;
+}
+.w-11 {
+  width: 2.75rem;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -2604,6 +2619,10 @@ html {
 }
 .max-w-xl {
   max-width: 36rem;
+}
+.max-w-max {
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2678,6 +2697,9 @@ html {
 .flex-col {
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .items-start {
   align-items: flex-start;
 }
@@ -2686,6 +2708,9 @@ html {
 }
 .items-center {
   align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
 }
 .justify-end {
   justify-content: flex-end;
@@ -2748,6 +2773,15 @@ html {
 .overflow-y-scroll {
   overflow-y: scroll;
 }
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+.break-words {
+  overflow-wrap: break-word;
+}
+.break-all {
+  word-break: break-all;
+}
 .rounded {
   border-radius: 0.25rem;
 }
@@ -2779,6 +2813,9 @@ html {
 }
 .border-\[2px\] {
   border-width: 2px;
+}
+.border-4 {
+  border-width: 4px;
 }
 .border-b {
   border-bottom-width: 1px;
@@ -3231,6 +3268,9 @@ html {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pr-20 {
+  padding-right: 5rem;
 }
 .text-center {
   text-align: center;

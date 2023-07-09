@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="{{ asset('assets/images/alcrowd-banner1.png') }}" alt="">
+                    <img src="{{ asset('assets/images/nosepar-banner.svg') }}" alt="">
                 </div>
             </div>
             {{-- <div class="mb-20">

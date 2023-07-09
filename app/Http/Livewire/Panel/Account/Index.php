@@ -122,7 +122,9 @@ class Index extends Component
 
         $this->user->update();
 
-        session()->flash('success', ' ثبت و بروز رسانی اطلاعات کلی انجام شد');
+        return redirect()->route('panel.account.index')->with(['success' => ' ثبت و بروز رسانی اطلاعات کلی انجام شد']);
+
+        // session()->flash('success', ' ثبت و بروز رسانی اطلاعات کلی انجام شد');
     }
 
 
@@ -138,7 +140,10 @@ class Index extends Component
         $this->user->password = Hash::make($this->password) ;
         $this->user->update();
 
-        session()->flash('success', ' ثبت و بروز رسانی اطلاعات کاربری انجام شد');
+        return redirect()->route('panel.account.index')->with(['success' => ' ثبت و بروز رسانی اطلاعات کاربری انجام شد']);
+
+
+        // session()->flash('success', ' ثبت و بروز رسانی اطلاعات کاربری انجام شد');
     }
 
     public function save3(){
@@ -149,7 +154,9 @@ class Index extends Component
         $this->user->kaggle = $this->kaggle ;
         $this->user->update();
 
-        session()->flash('success', ' ثبت و بروز رسانی شبکه های اجتماعی  انجام شد');
+        return redirect()->route('panel.account.index')->with(['success' => ' ثبت و بروز رسانی شبکه های اجتماعی  انجام شد ']);
+
+        // session()->flash('success', ' ثبت و بروز رسانی شبکه های اجتماعی  انجام شد ');
     }
 
 
@@ -170,7 +177,10 @@ class Index extends Component
         }
 
         // $this->team=$this->team;
-        session()->flash('success', ' ثبت و بروز رسانی تخصص ها انجام شد');
+
+        return redirect()->route('panel.account.index')->with(['success' => ' ثبت و بروز رسانی تخصص ها انجام شد ']);
+
+        // session()->flash('success', ' ثبت و بروز رسانی تخصص ها انجام شد ');
 
     }
 

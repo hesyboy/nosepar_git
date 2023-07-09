@@ -54,6 +54,7 @@ class ManageTeam extends Component
         if(!in_array($id,$this->selectedExperts)){
             array_push($this->selectedExperts,$id);
         }
+
     }
 
 
@@ -73,7 +74,9 @@ class ManageTeam extends Component
         $this->member->save();
         $this->members = TeamMember::where('team_id',$this->team->id)->get();
 
-        session()->flash('success', ' ارتقا دسترسی انجام شد');
+        // session()->flash('success', ' ارتقا دسترسی انجام شد ');
+        return redirect()->route('panel.teams.manage',$this->team->id)->with(['success' => ' ارتقا دسترسی انجام شد ']);
+
     }
 
     public function downgradeAccess(TeamMember $member){
@@ -82,7 +85,9 @@ class ManageTeam extends Component
         $this->member->save();
         $this->members = TeamMember::where('team_id',$this->team->id)->get();
 
-        session()->flash('success', ' کاهش دسترسی انجام شد');
+        // session()->flash('success', ' کاهش دسترسی انجام شد ');
+        return redirect()->route('panel.teams.manage',$this->team->id)->with(['success' => ' کاهش دسترسی انجام شد ']);
+
 
     }
 
@@ -92,7 +97,9 @@ class ManageTeam extends Component
         $this->member->save();
         $this->members = TeamMember::where('team_id',$this->team->id)->get();
 
-        session()->flash('success', ' تایید عضویت انجام شد');
+        // session()->flash('success', ' تایید عضویت انجام شد ');
+        return redirect()->route('panel.teams.manage',$this->team->id)->with(['success' => ' تایید عضویت انجام شد ']);
+
     }
 
     public function deleteMember(TeamMember $member){
@@ -100,7 +107,9 @@ class ManageTeam extends Component
         $this->member->delete();
         $this->members = TeamMember::where('team_id',$this->team->id)->get();
 
-        session()->flash('danger', ' حذف عضو انجام شد');
+        // session()->flash('danger', ' حذف عضو انجام شد ');
+        return redirect()->route('panel.teams.manage',$this->team->id)->with(['danger' => ' حذف عضو انجام شد ']);
+
 
     }
 
@@ -110,7 +119,9 @@ class ManageTeam extends Component
         $this->team->description = $this->description;
         $this->team->update();
 
-        session()->flash('success', 'ثبت و بروزرسانی اطلاعات کلی انجام شد.');
+        // session()->flash('success', 'ثبت و بروزرسانی اطلاعات کلی انجام شد. ');
+        return redirect()->route('panel.teams.manage',$this->team->id)->with(['success' => ' ثبت و بروزرسانی اطلاعات کلی انجام شد.']);
+
     }
 
     public function save2(){
@@ -120,7 +131,9 @@ class ManageTeam extends Component
         $this->team->kaggle = $this->kaggle ;
         $this->team->update();
 
-        session()->flash('success', ' ثبت و بروز رسانی شبکه های اجتماعی  انجام شد');
+        // session()->flash('success', ' ثبت و بروز رسانی شبکه های اجتماعی  انجام شد ');
+        return redirect()->route('panel.teams.manage',$this->team->id)->with(['success' => ' ثبت و بروز رسانی شبکه های اجتماعی  انجام شد ']);
+
     }
 
     public function save3(){
@@ -140,7 +153,9 @@ class ManageTeam extends Component
         }
 
         // $this->team=$this->team;
-        session()->flash('success', ' ثبت و بروز رسانی تخصص ها انجام شد');
+        // session()->flash('success', ' ثبت و بروز رسانی تخصص ها انجام شد ');
+        return redirect()->route('panel.teams.manage',$this->team->id)->with(['success' => ' ثبت و بروز رسانی تخصص ها انجام شد ']);
+
 
     }
 

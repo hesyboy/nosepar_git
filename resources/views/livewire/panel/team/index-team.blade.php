@@ -7,7 +7,7 @@
 
         <div class="grid grid-cols-12 gap-5">
 
-            <div class="col-span-12 md:col-span-8 bg-white rounded-md shadow relative h-[370px]">
+            <div class="col-span-12 md:col-span-8 bg-white rounded-md shadow">
                 <div class="flex items-center justify-between p-3 border-b font-iranyekan-bold " x-data="{modal:false}">
                     <span class="text-lg ">
                         تیم های من
@@ -148,50 +148,53 @@
 
                 </div>
 
-                <div class="w-full flex justify-between items-center gap-1 mt-3 p-1 absolute bottom-0 right-0">
-                    <div class="flex gap-1 p-2 text-xs font-bold">
-                        <span>
-                            نمایش
-                        </span>
-                        <span>
-                            {{$myTeamsView->count()}}
-                        </span>
-                        <span>
-                         از
-                        </span>
-                        <span>
-                            {{$myTeams->count()}}
-                        </span>
-                        <span>
-                            مورد
-                        </span>
-                    </div>
-                    <div class="flex flex-row-reverse items-center gap-2 p-2">
-                        @for ($i=0 ; $i<($myTeams->count())/3;$i++)
-                            <span wire:click=pagination1({{$i+1}}) class="cursor-pointer flex items-center justify-center w-8 h-8  rounded-md
-                            @if($page1==$i+1)
-                                bg-blue-600 text-white
-                            @else
-                                bg-gray-100 text-black hover:bg-gray-200
-                            @endif
-                            ">
-                                <span>
-                                    {{$i+1}}
-                                </span>
+                @if ($myTeams->count()>10)
+                    <div class="w-full flex justify-between items-center gap-1 mt-3 p-1 ">
+                        <div class="flex gap-1 p-2 text-xs font-bold">
+                            <span>
+                                نمایش
                             </span>
-                        @endfor
+                            <span>
+                                {{$myTeamsView->count()}}
+                            </span>
+                            <span>
+                            از
+                            </span>
+                            <span>
+                                {{$myTeams->count()}}
+                            </span>
+                            <span>
+                                مورد
+                            </span>
+                        </div>
+                        <div class="flex flex-row-reverse items-center gap-2 p-2">
+                            @for ($i=0 ; $i<($myTeams->count())/10;$i++)
+                                <span wire:click=pagination1({{$i+1}}) class="cursor-pointer flex items-center justify-center w-8 h-8  rounded-md
+                                @if($page1==$i+1)
+                                    bg-blue-600 text-white
+                                @else
+                                    bg-gray-100 text-black hover:bg-gray-200
+                                @endif
+                                ">
+                                    <span>
+                                        {{$i+1}}
+                                    </span>
+                                </span>
+                            @endfor
 
-                        <span  class=" flex items-center justify-center  animate-spin" wire:loading wire:target="pagination1">
-                            <i class="fi fi-rr-spinner text-lg flex" ></i>
-                        </span>
+                            <span  class=" flex items-center justify-center  animate-spin" wire:loading wire:target="pagination1">
+                                <i class="fi fi-rr-spinner text-lg flex" ></i>
+                            </span>
 
+
+                        </div>
 
                     </div>
+                @endif
 
-                </div>
             </div>
 
-            <div class="col-span-12 md:col-span-4 bg-white rounded-md shadow h-[370px] relative">
+            <div class="col-span-12 md:col-span-4 bg-white rounded-md shadow">
                 <div class="flex items-center p-4 border-b ">
                     <span class="font-iranyekan-bold text-lg ">
                         پیوندهای من
@@ -213,47 +216,50 @@
 
                     </ul>
                 </div>
-                <div class="absolute w-full flex justify-between items-center gap-1  p-1 bottom-0 right-0">
-                    <div class="flex gap-1  p-2 text-xs font-bold">
-                        <span>
-                            نمایش
-                        </span>
-                        <span>
-                            {{$userFollowingsView->count()}}
-                        </span>
-                        <span>
-                         از
-                        </span>
-                        <span>
-                            {{$userFollowings->count()}}
-                        </span>
-                        <span>
-                            مورد
-                        </span>
-                    </div>
-                    <div class="flex flex-row-reverse items-center gap-2 p-2">
-
-                        @for ($i=0 ; $i<($userFollowings->count())/4;$i++)
-                            <span wire:click=pagination2({{$i+1}}) class="cursor-pointer flex items-center justify-center w-8 h-8  rounded-md
-                            @if($page2==$i+1)
-                                bg-blue-600 text-white
-                            @else
-                                bg-gray-100 text-black hover:bg-gray-200
-                            @endif
-                            ">
-                                <span>
-                                    {{$i+1}}
-                                </span>
+                @if ($userFollowings->count()>10)
+                    <div class="absolute w-full flex justify-between items-center gap-1  p-1 bottom-0 right-0">
+                        <div class="flex gap-1  p-2 text-xs font-bold">
+                            <span>
+                                نمایش
                             </span>
-                        @endfor
-                        <span  class=" flex items-center justify-center  animate-spin" wire:loading wire:target="pagination2">
-                            <i class="fi fi-rr-spinner text-lg flex " ></i>
-                        </span>
+                            <span>
+                                {{$userFollowingsView->count()}}
+                            </span>
+                            <span>
+                            از
+                            </span>
+                            <span>
+                                {{$userFollowings->count()}}
+                            </span>
+                            <span>
+                                مورد
+                            </span>
+                        </div>
+                        <div class="flex flex-row-reverse items-center gap-2 p-2">
 
+                            @for ($i=0 ; $i<($userFollowings->count())/10;$i++)
+                                <span wire:click=pagination2({{$i+1}}) class="cursor-pointer flex items-center justify-center w-8 h-8  rounded-md
+                                @if($page2==$i+1)
+                                    bg-blue-600 text-white
+                                @else
+                                    bg-gray-100 text-black hover:bg-gray-200
+                                @endif
+                                ">
+                                    <span>
+                                        {{$i+1}}
+                                    </span>
+                                </span>
+                            @endfor
+                            <span  class=" flex items-center justify-center  animate-spin" wire:loading wire:target="pagination2">
+                                <i class="fi fi-rr-spinner text-lg flex " ></i>
+                            </span>
+
+
+                        </div>
 
                     </div>
+                @endif
 
-                </div>
             </div>
 
         </div>

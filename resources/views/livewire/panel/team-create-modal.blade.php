@@ -43,12 +43,24 @@
 
                         <div class="flex flex-col md:flex-row gap-5 justify-between">
 
-                            <div>
-                                <div class="flex flex-col gap-2">
+                            <div class="w-full">
+                                <div class="w-full flex flex-col gap-2">
                                     <span>تصویر پروفایل</span>
-                                    <label class="w-28 h-28 flex items-center justify-center  p-2 rounded-md border-2 border-dashed border-gray-400 outline-blue-600 text-xs text-right cursor-pointer">
+                                    <label class="w-full h-16 flex items-center  p-2 rounded-md border-2 border-dashed border-blue-600 outline-blue-600 text-xs text-right cursor-pointer">
                                         <input type="file" wire:model="profile_image" class="hidden">
-                                        <div class="flex gap-3 ">
+                                        <div class="w-full flex justify-between items-center">
+                                            <div class=" text-slate-400">
+                                                انتخاب فایل برای آپلود
+                                            </div>
+                                            <div class="flex gap-3 ">
+                                                @if ($profile_image)
+                                                    <img src="{{ $profile_image->temporaryUrl() }}" class="h-12 w-12 rounded-md">
+                                                @else
+                                                    <img src="{{ asset('assets/images/icons8_upload.svg') }}" class="h-8 w-8 rounded-md">
+                                                @endif
+                                            </div>
+                                        </div>
+                                        {{-- <div class="flex gap-3 ">
                                             @if ($profile_image)
                                                 <img src="{{ $profile_image->temporaryUrl() }}" class="h-24 w-24 rounded-md">
                                             @endif
@@ -57,7 +69,7 @@
                                             <div class="w-full text-center text-slate-400">
                                                 انتخاب تصاویر
                                             </div>
-                                        @endif
+                                        @endif --}}
                                     </label>
                                 </div>
                             </div>
@@ -295,7 +307,7 @@
                             </span>
                             <input type="text" placeholder="جستجو در میان تخصص ها " wire:model="expertSearch"
                             class="w-full px-3 py-3 rounded-md border border-gray-300 outline-blue-600 text-xs text-right">
-                            <div class="grid grid-cols-3 gap-2 w-full pt-1   outline-blue-600 text-xs">
+                            <div class="grid grid-cols-3 gap-2 w-full pt-1 outline-blue-600 text-xs max-h-60 overflow-y-auto">
                                 @foreach ($experts as $key=>$expert)
                                     <div class="px-2 py-1 rounded-md border  hover:bg-gray-100
                                     @if (in_array($expert->id,$selectedExperts))
@@ -304,35 +316,31 @@
                                         border-gray-300
                                     @endif
                                     ">
-                                        <div class="flex items-center gap-2 justify-between">
+                                        <div class="">
                                             {{-- <input type="checkbox" wire:model="userMemberSelector.{{$key}}" value="{{$expert->id}}" class="hidden checkbox h-5 w-5 bg-white" > --}}
-                                            <div class="w-full flex gap-1 items-center text-blue-600 text-xs">
-                                                <img class="h-7 w-7 rounded-full" src="{{asset('/assets/images/default.jpg')}}" alt="">
-                                                <span>{{$expert->title}} </span>
+                                            <div class="flex justify-between gap-1 items-center text-blue-600 text-xs mb-2">
+                                                <img class="h-7 w-7 rounded-full" src="{{asset($expert->image)}}" alt="">
+                                                <div class="flex gap-1">
+                                                    @if (in_array($expert->id,$selectedExperts))
+
+                                                        <label class="cursor-pointer">
+                                                            <img src="{{ asset('assets/images/icons8_upload.svg') }}" alt="">
+                                                            <input type="file" multiple class="hidden">
+                                                        </label>
+                                                        <span wire:click="removeTeamExpret({{ $expert->id }})" class="cursor-pointer">
+                                                            <img src="{{ asset('assets/images/icons_close.svg') }}" alt="">
+                                                        </span>
+                                                    @else
+                                                        <span wire:click="addTeamExpret({{ $expert->id }})">
+                                                            <img src="{{ asset('assets/images/icons_select.svg') }}" alt="">
+                                                        </span>
+                                                    @endif
+                                                </div>
                                             </div>
-                                            <div class="flex gap-1">
-
-                                                {{-- <span>
-                                                    U
-                                                </span> --}}
-
-                                                @if (in_array($expert->id,$selectedExperts))
-
-                                                    <label class="cursor-pointer">
-                                                        <img src="{{ asset('assets/images/icons8_upload.svg') }}" alt="">
-                                                        <input type="file" multiple class="hidden">
-                                                    </label>
-                                                    <span wire:click="removeTeamExpret({{ $expert->id }})" class="cursor-pointer">
-                                                        <img src="{{ asset('assets/images/icons_close.svg') }}" alt="">
-                                                    </span>
-
-
-                                                @else
-                                                    <span wire:click="addTeamExpret({{ $expert->id }})">
-                                                        <img src="{{ asset('assets/images/icons_select.svg') }}" alt="">
-                                                    </span>
-                                                @endif
+                                            <div class="break-all max-w-max">
+                                                <p class="">{{$expert->title}} </p>
                                             </div>
+
 
                                         </div>
                                     </div>
@@ -342,7 +350,7 @@
 
                         </div>
 
-                        <div class="text-xs mt-5 flex flex-col gap-3">
+                        <div class="text-xs mt-2 flex flex-col gap-3">
                             <div>
                                 {{-- مدارک هر تخصص انتخاب شده را از طریق کلیک روی ایکن --}}
                             </div>

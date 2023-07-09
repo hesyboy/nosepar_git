@@ -90,12 +90,12 @@
 
         <div class=" bg-white rounded-md shadow" >
             <div class="flex justify-between items-center p-4">
-                <div>
+                <div class="flex flex-col gap-5">
                     <div class="flex gap-3">
                         <div>
-                            <img src="{{ asset($user->profile_image) }}" alt="" class="w-24 h-24 rounded-full">
+                            <img src="{{ asset($user->profile_image) }}" alt="" class="w-24 h-24 rounded-md">
                         </div>
-                        <div class="flex flex-col items-start gap-8">
+                        <div class="flex flex-col items-start gap-4">
                             <div class="flex gap-5 items-center">
                                 <h2 class="font-iranyekan-bold text-xl">
                                     {{$user->first_name}} {{$user->last_name}}
@@ -107,8 +107,8 @@
                             <div class="flex gap-3">
                                 @foreach ($user->userExperts as $userExpert)
                                     <div x-data="{popup:false}" @mouseover="popup=true" @mouseleave="popup=false"
-                                        class="relative flex items-center bg-white justify-center  text-xs text-white uppercase  rounded-full cursor-pointer h-10 w-10  hover:z-50 border-2 border-gray-200 hover:border-2 hover:border-blue-500">
-                                        <img class="rounded-full" src="{{asset($userExpert->expert->image)}}" alt="" >
+                                        class="relative flex items-center bg-white justify-center  text-xs text-white uppercase  rounded-md overflow-hidden cursor-pointer h-11 w-11  hover:z-50 border-2 border-gray-200 hover:border-2 hover:border-blue-500">
+                                        <img class="" src="{{asset($userExpert->expert->image)}}" alt="" >
                                         <span class="absolute -top-7 text-white bg-blue-600 rounded px-2 py-0.5 w-max" x-show="popup">
                                             {{$userExpert->expert->title}}
                                         </span>
@@ -118,9 +118,23 @@
                         </div>
 
                     </div>
-                    <div class="my-3">
+                    <div>
+
+                        <div class="flex justify-start gap-5 px-2">
+                            <a href="http://{{$user->kaggle}}">
+                                <img src="{{asset('assets/images/telegram-blue.png')}}" alt="" class="w-7 h-7">
+                            </a>
+                            <a href="http://{{$user->linkedin}}">
+                                <img src="{{asset('assets/images/linkdin-blue.png')}}" alt="" class="w-7 h-7">
+                            </a>
+                            <a href="http://{{$user->github}}">
+                                <img src="{{asset('assets/images/github-blue.png')}}" alt="" class="w-7 h-7">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="">
                         <span class="font-iranyekan-reqular">
-                            {{$user->description}}
+                            {{ Str::limit($user->description, 60) }}
                         </span>
                     </div>
                 </div>
@@ -185,9 +199,9 @@
 
 
 
-                    <a href="" class="flex gap-3 p-2 text-base text-white bg-blue-600 rounded-md hover:bg-blue-700">
+                    {{-- <a href="" class="flex gap-3 p-2 text-base text-white bg-blue-600 rounded-md hover:bg-blue-700">
                         <img src="{{asset('assets/images/icons_share.svg')}}" alt="" class="w-5">
-                    </a>
+                    </a> --}}
 
 
                 </div>
@@ -223,33 +237,13 @@
                         {{$user->description}}
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-5">
+                <div class="grid grid-cols-1 gap-5">
                     <div class="p-3 bg-white rounded-md shadow">
                         <div class="font-iranyekan-bold text-base">
                             نشان های کسب شده
                         </div>
                     </div>
-                    <div class="p-3 bg-white rounded-md shadow">
-                        <div class="font-iranyekan-bold text-base mb-3">
-                            تخصص ها
-                        </div>
-                        <div class="flex gap-3">
-                            @foreach ($user->userExperts as $userExpert)
-                            <div class=" text-xs p-2 border rounded-md bg-gray-100 hover:bg-blue-600 hover:text-white duration-200 cursor-pointer">
-                                <span>
-                                    {{$userExpert->expert->title}}
-                                </span>
-                            </div>
-                                {{-- <div
-                                    class="flex w-44 p-2 bg-gray-100 gap-2 items-center  justify-center  text-xs text-white uppercase  rounded-md cursor-pointer   hover:z-50 ">
-                                    <img class="rounded-lg border-2 border-blue-600 h-10 w-10" src="{{asset($userExpert->expert->image)}}" alt="" >
-                                    <span class="text-black rounded px-2 py-0.5 text-xs font-bold">
-                                        {{$userExpert->expert->title}}
-                                    </span>
-                                </div> --}}
-                            @endforeach
-                        </div>
-                    </div>
+
                 </div>
             </div>
 

@@ -135,7 +135,7 @@ class IndexTeam extends Component
 
 
             $this->myTeamsView=new Collection();
-            for($i=($this->page1-1)*3;$i<$this->page1*3;$i++){
+            for($i=($this->page1-1)*10;$i<$this->page1*10;$i++){
                 if($i<$this->myTeams->count()){
                     $this->myTeamsView->push($this->myTeams[$i]);
                 }
@@ -143,7 +143,7 @@ class IndexTeam extends Component
 
             // $this->userFollowings
             $this->userFollowingsView=new Collection();
-            for($i=($this->page2-1)*4;$i<$this->page2*4;$i++){
+            for($i=($this->page2-1)*10;$i<$this->page2*10;$i++){
                 if($i<$this->userFollowings->count()){
                     $this->userFollowingsView->push($this->userFollowings[$i]);
                 }
