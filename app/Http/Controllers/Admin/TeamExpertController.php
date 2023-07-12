@@ -35,6 +35,33 @@ class TeamExpertController extends Controller
             $request->image->storeAs('public/experts/images', $imgName.'.'.$request->image->extension());
             $expert->image='/storage/experts/images/'.$imgName.'.'.$request->file('image')->extension();
         }
+
+        if($request->image1){
+            $imgName=rand(100000,99999999);
+            $request->image1->storeAs('public/experts/images', $imgName.'.'.$request->image1->extension());
+            $expert->image1='/storage/experts/images/'.$imgName.'.'.$request->file('image1')->extension();
+        }
+        if($request->image2){
+            $imgName=rand(100000,99999999);
+            $request->image2->storeAs('public/experts/images', $imgName.'.'.$request->image2->extension());
+            $expert->image2='/storage/experts/images/'.$imgName.'.'.$request->file('image2')->extension();
+        }
+        if($request->image3){
+            $imgName=rand(100000,99999999);
+            $request->image3->storeAs('public/experts/images', $imgName.'.'.$request->image3->extension());
+            $expert->image3='/storage/experts/images/'.$imgName.'.'.$request->file('image3')->extension();
+        }
+        if($request->image4){
+            $imgName=rand(100000,99999999);
+            $request->image4->storeAs('public/experts/images', $imgName.'.'.$request->image4->extension());
+            $expert->image4='/storage/experts/images/'.$imgName.'.'.$request->file('image4')->extension();
+        }
+        if($request->image5){
+            $imgName=rand(100000,99999999);
+            $request->image5->storeAs('public/experts/images', $imgName.'.'.$request->image5->extension());
+            $expert->image5='/storage/experts/images/'.$imgName.'.'.$request->file('image5')->extension();
+        }
+
         $expert->save();
         toast('انجام شد','success');
         return redirect()->route('admin.teams.experts.index');
@@ -61,6 +88,32 @@ class TeamExpertController extends Controller
             $imgName=rand(100000,99999999);
             $request->image->storeAs('public/experts/images', $imgName.'.'.$request->image->extension());
             $expert->image='/storage/experts/images/'.$imgName.'.'.$request->file('image')->extension();
+        }
+
+        if($request->image1){
+            $imgName=rand(100000,99999999);
+            $request->image1->storeAs('public/experts/images', $imgName.'.'.$request->image1->extension());
+            $expert->image1='/storage/experts/images/'.$imgName.'.'.$request->file('image1')->extension();
+        }
+        if($request->image2){
+            $imgName=rand(100000,99999999);
+            $request->image2->storeAs('public/experts/images', $imgName.'.'.$request->image2->extension());
+            $expert->image2='/storage/experts/images/'.$imgName.'.'.$request->file('image2')->extension();
+        }
+        if($request->image3){
+            $imgName=rand(100000,99999999);
+            $request->image3->storeAs('public/experts/images', $imgName.'.'.$request->image3->extension());
+            $expert->image3='/storage/experts/images/'.$imgName.'.'.$request->file('image3')->extension();
+        }
+        if($request->image4){
+            $imgName=rand(100000,99999999);
+            $request->image4->storeAs('public/experts/images', $imgName.'.'.$request->image4->extension());
+            $expert->image4='/storage/experts/images/'.$imgName.'.'.$request->file('image4')->extension();
+        }
+        if($request->image5){
+            $imgName=rand(100000,99999999);
+            $request->image5->storeAs('public/experts/images', $imgName.'.'.$request->image5->extension());
+            $expert->image5='/storage/experts/images/'.$imgName.'.'.$request->file('image5')->extension();
         }
         $expert->update();
         toast('انجام شد','success');

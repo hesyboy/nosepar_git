@@ -49,6 +49,29 @@
 
             </div>
 
+            <div class="grid grid-cols-5 gap-3">
+                <div class="p-2">
+                    <label for="">level1</label>
+                    <input type="file" name="image1" value="{{$expert->image1}}">
+                </div>
+                <div class="p-2">
+                    <label for="">level2</label>
+                    <input type="file" name="image2" value="{{$expert->image2}}">
+                </div>
+                <div class="p-2">
+                    <label for="">level3</label>
+                    <input type="file" name="image3" value="{{$expert->image3}}">
+                </div>
+                <div class="p-2">
+                    <label for="">level4</label>
+                    <input type="file" name="image4" value="{{$expert->image4}}">
+                </div>
+                <div class="p-2">
+                    <label for="">level5</label>
+                    <input type="file" name="image5" value="{{$expert->image5}}">
+                </div>
+            </div
+
 
                 <div>
                     <button type="submit" class="flex items-center gap-1 bg-slate-900 hover:bg-slate-800 duration-200 text-white py-2 px-4 rounded-md ">اصلاح </button>

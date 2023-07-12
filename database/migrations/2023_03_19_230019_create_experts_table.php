@@ -17,6 +17,11 @@ class CreateExpertsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('image')->default('/assets/images/default.jpg');
+            $table->string('image1')->default('/assets/images/default.jpg');
+            $table->string('image2')->default('/assets/images/default.jpg');
+            $table->string('image3')->default('/assets/images/default.jpg');
+            $table->string('image4')->default('/assets/images/default.jpg');
+            $table->string('image5')->default('/assets/images/default.jpg');
             $table->timestamps();
         });
     }

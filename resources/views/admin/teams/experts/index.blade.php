@@ -50,9 +50,26 @@
                                 {{-- {{ $expert->id }} --}}
                             </td>
                             <td class="p-3">
-                                <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
+                                <div class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
                                     {{ $expert->title }}
-                                </span>
+                                </div>
+                                <div class="flex gap-2 items-center">
+                                    <span>
+                                        <img class="h-7" src="{{asset( $expert->image1 )}}" alt="">
+                                    </span>
+                                    <span>
+                                        <img class="h-7" src="{{asset( $expert->image2 )}}" alt="">
+                                    </span>
+                                    <span>
+                                        <img class="h-7" src="{{asset( $expert->image3 )}}" alt="">
+                                    </span>
+                                    <span>
+                                        <img class="h-7" src="{{asset( $expert->image4 )}}" alt="">
+                                    </span>
+                                    <span>
+                                        <img class="h-7" src="{{asset( $expert->image5 )}}" alt="">
+                                    </span>
+                                </div>
                             </td>
                             <td class="p-3">
                                 <span class="mx-1 px-2 py-1 bg-slate-800 rounded-md text-white">
