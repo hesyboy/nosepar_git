@@ -58,13 +58,13 @@
                                 <span class="px-2 py-1 bg-slate-800 rounded-md text-white">
                                     {{ $user->first_name }} {{ $user->last_name }}
                                 </span>
-                                
+
                             </td>
                             <td class="p-3">
                                 <span class="px-2 py-1 bg-slate-800 rounded-md text-white">
                                     {{ $user->email }}
                                 </span>
-                                
+
                             </td>
                             <td class="p-3">
                                 <span class="px-2 py-1 bg-slate-800 rounded-md text-white">
@@ -93,7 +93,6 @@
                                         حذف اکانت
                                     </button>
                                 </form>
-
                             </td>
                         </tr>
                         @endforeach

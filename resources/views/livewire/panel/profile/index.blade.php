@@ -119,7 +119,6 @@
 
                     </div>
                     <div>
-
                         <div class="flex justify-start gap-5 px-2">
                             <a href="http://{{$user->kaggle}}">
                                 <img src="{{asset('assets/images/telegram-blue.png')}}" alt="" class="w-7 h-7">

@@ -82,9 +82,9 @@
                         @endif
                          " >
                         @if (request()->routeIs('panel.teams.*'))
-                            <img src="{{ asset('assets/images/panel-menu-teams2.png') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-teams2.png') }}" alt="">
                         @else
-                            <img src="{{ asset('assets/images/panel-menu-teams.png') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-teams.png') }}" alt="">
                         @endif
                             <span x-show="menu" x-cloak>
                                 تیم سازی
@@ -101,9 +101,9 @@
                         @endif
                          " >
                         @if (request()->routeIs('panel.challenge.*'))
-                            <img src="{{ asset('assets/images/panel-menu-chalesh2.png') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-chalesh2.png') }}" alt="">
                         @else
-                            <img src="{{ asset('assets/images/panel-menu-chalesh.png') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-chalesh.png') }}" alt="">
                         @endif
                             <span x-show="menu" x-cloak>
                                 چالش ها
@@ -114,9 +114,9 @@
                     <li>
                         <a class="flex items-center gap-5 p-2  rounded-m text-slate-500" >
                         @if (request()->routeIs('panel.123'))
-                            <img src="{{ asset('assets/images/panel-menu-academy.png') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-academy.png') }}" alt="">
                         @else
-                            <img src="{{ asset('assets/images/panel-menu-academy.png') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-academy.png') }}" alt="">
                         @endif
                             <span x-show="menu">
                                 آکادمی
@@ -127,9 +127,9 @@
                     <li>
                         <a class="flex items-center gap-5 p-2  rounded-m text-slate-500" >
                         @if (request()->routeIs('panel.123'))
-                            <img src="{{ asset('assets/images/panel-menu-mali.png') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-mali.png') }}" alt="">
                         @else
-                            <img src="{{ asset('assets/images/panel-menu-mali.png') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-mali.png') }}" alt="">
                         @endif
                             <span x-show="menu" x-cloak>
                                 حسابداری
@@ -140,9 +140,9 @@
                     <li>
                         <a href="{{ route('site.about-us') }}" class="flex items-center gap-5 p-2  rounded-m text-black" >
                         @if (request()->routeIs('panel.123'))
-                            <img src="{{ asset('assets/images/panel-menu-academy.png') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-academy.png') }}" alt="">
                         @else
-                            <img src="{{ asset('assets/images/icons_info 1.svg') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/icons_info 1.svg') }}" alt="">
                         @endif
                             <span x-show="menu">
                                 درباره ما
@@ -154,11 +154,11 @@
                     <li>
                         <a href="{{ route('site.contact-us') }}" class="flex items-center gap-5 p-2  rounded-m text-black" >
                         @if (request()->routeIs('panel.123'))
-                            <img src="{{ asset('assets/images/panel-menu-academy.png') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-academy.png') }}" alt="">
                         @else
                             <img src="{{ asset('assets/images/icons_phone11.svg') }}" alt="">
                         @endif
-                            <span x-show="menu">
+                            <span class="h-7 w-7" x-show="menu">
                                 تماس با ما
                             </span>
                         </a>

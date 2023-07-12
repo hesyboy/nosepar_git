@@ -165,7 +165,12 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex flex-col gap-2" wire:                                x-data="{ isUploading: false, progress: 0 }"
+                                    x-on:livewire-upload-start="isUploading = true"
+                                    x-on:livewire-upload-finish="isUploading = false"
+                                    x-on:livewire-upload-error="isUploading = false"
+                                    x-on:livewire-upload-progress="progress = $event.detail.progress"
+                                    >
                                         <span>تصویر پروفایل</span>
                                         <label class=" w-full p-3 rounded-md border-2 border-dashed border-blue-500 outline-blue-600 text-sm text-right cursor-pointer">
                                             <input type="file" wire:model="profile_image" class="hidden">
@@ -178,6 +183,10 @@
                                             </div>
 
                                         </label>
+                                        <div x-show="isUploading" x-cloak>
+                                            <progress class="w-full rounded-md overflow-hidden" max="100" x-bind:value="progress">
+                                            </progress>
+                                        </div>
                                     </div>
                                 </div>
                                 {{-- <div>
@@ -325,6 +334,25 @@
                                             </div>
                                         </div>
 
+                                    @endforeach
+                                </div>
+                                <div class="flex flex-col gap-1 mt-3">
+                                    @foreach ($experts as $key=>$expert)
+                                        @if (in_array($expert->id,$selectedExperts))
+                                            <div class="w-full flex justify-between items-center p-3 rounded text-xs border-2">
+                                                <div>
+                                                    {{$expert->title}}
+                                                </div>
+                                                <div class="flex gap-1">
+                                                    <span wire:click="removeUserExpret({{ $expert->id }})" class="cursor-pointer bg-blue-100 rounded-md py-1 px-2 text-blue-600">
+                                                        مشاهده
+                                                    </span>
+                                                    <span wire:click="removeUserExpret({{ $expert->id }})" class="cursor-pointer bg-red-100 rounded-md py-1 px-2 text-red-600">
+                                                        حذف
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        @endif
                                     @endforeach
                                 </div>
                                 {{-- <div class="flex gap-3">

@@ -44,7 +44,13 @@
                         <div class="flex flex-col md:flex-row gap-5 justify-between">
 
                             <div class="w-full">
-                                <div class="w-full flex flex-col gap-2">
+                                <div class="w-full flex flex-col gap-2"
+                                x-data="{ isUploading: false, progress: 0 }"
+                                x-on:livewire-upload-start="isUploading = true"
+                                x-on:livewire-upload-finish="isUploading = false"
+                                x-on:livewire-upload-error="isUploading = false"
+                                x-on:livewire-upload-progress="progress = $event.detail.progress"
+                                >
                                     <span>تصویر پروفایل</span>
                                     <label class="w-full h-16 flex items-center  p-2 rounded-md border-2 border-dashed border-blue-600 outline-blue-600 text-xs text-right cursor-pointer">
                                         <input type="file" wire:model="profile_image" class="hidden">
@@ -60,17 +66,11 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        {{-- <div class="flex gap-3 ">
-                                            @if ($profile_image)
-                                                <img src="{{ $profile_image->temporaryUrl() }}" class="h-24 w-24 rounded-md">
-                                            @endif
-                                        </div>
-                                        @if (!$profile_image)
-                                            <div class="w-full text-center text-slate-400">
-                                                انتخاب تصاویر
-                                            </div>
-                                        @endif --}}
                                     </label>
+                                    <div x-show="isUploading" x-cloak>
+                                        <progress class="w-full rounded-md overflow-hidden" max="100" x-bind:value="progress">
+                                        </progress>
+                                    </div>
                                 </div>
                             </div>
                             {{-- <div>
