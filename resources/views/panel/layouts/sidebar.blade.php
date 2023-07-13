@@ -39,20 +39,33 @@
                             @foreach (auth()->user()->userExperts as $userExpert)
                                 <div x-data="{popup:false}" @mouseover="popup=true" @mouseleave="popup=false"
                                     class="relative flex items-center bg-white justify-center  text-xs text-white uppercase  rounded-full cursor-pointer h-8 w-8  hover:z-50 border-2 border-gray-200 hover:border-2 hover:border-blue-500">
-                                    <img class="rounded-md" src="{{asset($userExpert->expert->image)}}" alt="" >
+                                    {{-- <img class="rounded-md" src="{{asset($userExpert->expert->image)}}" alt="" > --}}
+                                        @if ($userExpert->level==1)
+                                        <img class="h-8 w-8 rounded-full" src="{{$userExpert->expert->image1}}">
+                                        @elseif ($userExpert->level==2)
+                                            <img class="h-8 w-8 rounded-full" src="{{$userExpert->expert->image2}}">
+                                        @elseif ($userExpert->level==3)
+                                            <img class="h-8 w-8 rounded-full" src="{{$userExpert->expert->image3}}">
+                                        @elseif ($userExpert->level==4)
+                                            <img class="h-8 w-8 rounded-full" src="{{$userExpert->expert->image4}}">
+                                        @elseif ($userExpert->level==5)
+                                            <img class="h-8 w-8 rounded-full" src="{{$userExpert->expert->image5}}">
+                                        @else
+                                            <img class="h-8 w-8 rounded-full" src="{{$userExpert->expert->image}}">
+                                        @endif
                                     <span class="absolute -top-7 text-white bg-blue-600 rounded px-2 py-0.5 w-max" x-show="popup">
                                         {{$userExpert->expert->title}}
                                     </span>
                                 </div>
                             @endforeach
                         </div>
-                        {{-- <div class="text-xs font-bold" x-show="menu" x-cloak>
+                        <div class="text-xs font-bold" x-show="menu" x-cloak>
                              کد انحصاری : {{ auth()->user()->code }}
-                        </div> --}}
+                        </div>
                     </div>
                 </a>
             </div>
-            <div class="mt-12">
+            <div class="mt-14">
                 <ul class="flex flex-col gap-2 text-base " :class="menu ? '' : 'items-center' ">
                     {{-- <li>
                         <a href="{{ route('panel.index') }}" class="flex items-center gap-5 p-3 hover:bg-slate-100 rounded-md
@@ -156,9 +169,9 @@
                         @if (request()->routeIs('panel.123'))
                             <img class="h-7 w-7" src="{{ asset('assets/images/panel-menu-academy.png') }}" alt="">
                         @else
-                            <img src="{{ asset('assets/images/icons_phone11.svg') }}" alt="">
+                            <img class="h-7 w-7" src="{{ asset('assets/images/icons_phone11.svg') }}" alt="">
                         @endif
-                            <span class="h-7 w-7" x-show="menu">
+                            <span x-show="menu">
                                 تماس با ما
                             </span>
                         </a>
