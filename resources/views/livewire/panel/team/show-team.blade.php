@@ -51,7 +51,20 @@
 
                                     <div x-data="{popup:false}" @mouseover="popup=true" @mouseleave="popup=false"
                                         class="relative flex items-center bg-white justify-center  text-xs text-white uppercase  rounded-full cursor-pointer h-10 w-10  hover:z-50 border-2 border-gray-200 hover:border-2 hover:border-blue-500">
-                                        <img class="rounded-full" src="{{asset($teamExpert->expert->image)}}" alt="" >
+                                        {{-- <img class="rounded-full" src="{{asset($teamExpert->expert->image)}}" alt="" > --}}
+                                        @if ($teamExpert->level==1)
+                                        <img class="h-8 w-8 rounded-full" src="{{$teamExpert->expert->image1}}">
+                                        @elseif ($teamExpert->level==2)
+                                            <img class="h-8 w-8 rounded-full" src="{{$teamExpert->expert->image2}}">
+                                        @elseif ($teamExpert->level==3)
+                                            <img class="h-8 w-8 rounded-full" src="{{$teamExpert->expert->image3}}">
+                                        @elseif ($teamExpert->level==4)
+                                            <img class="h-8 w-8 rounded-full" src="{{$teamExpert->expert->image4}}">
+                                        @elseif ($teamExpert->level==5)
+                                            <img class="h-8 w-8 rounded-full" src="{{$teamExpert->expert->image5}}">
+                                        @else
+                                            <img class="h-8 w-8 rounded-full" src="{{$teamExpert->expert->image}}">
+                                        @endif
                                         <span class="absolute -top-7 text-white bg-blue-600 rounded px-2 py-0.5 w-max" x-show="popup">
                                             {{$teamExpert->expert->title}}
                                         </span>
