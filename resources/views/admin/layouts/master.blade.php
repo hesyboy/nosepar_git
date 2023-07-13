@@ -7,7 +7,7 @@
 <body dir="rtl"  data-theme="light" class="h-screen">
     <div class="bg-slate-100 text-sm flex flex-col h-full relative">
 
-        <div class="w-full flex" x-data="{menu:false}">
+        <div class="w-full flex" x-data="{menu:true}">
             <div class=" bg-white h-screen" :class="menu ? 'w-[350px]' : 'w-[80px]' ">
                 @include('admin.layouts.sidebar')
             </div>

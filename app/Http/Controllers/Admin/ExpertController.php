@@ -3,20 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\TeamExpert;
-use Illuminate\Http\Request;
-use Alert;
 use App\Models\Expert;
+use Illuminate\Http\Request;
 
-class TeamExpertController extends Controller
+class ExpertController extends Controller
 {
     public function index(){
         $experts=Expert::all();
-        return view('admin.teams.experts.index',compact('experts'));
+        return view('admin.experts.index',compact('experts'));
     }
 
     public function create(){
-        return view('admin.teams.experts.create');
+        return view('admin.experts.create');
     }
 
     public function store(Request $request){
@@ -64,14 +62,14 @@ class TeamExpertController extends Controller
 
         $expert->save();
         toast('انجام شد','success');
-        return redirect()->route('admin.teams.experts.index');
+        return redirect()->route('admin.experts.index');
 
     }
 
 
     public function edit($id){
         $expert=Expert::find($id);
-        return view('admin.teams.experts.edit',compact('expert'));
+        return view('admin.experts.edit',compact('expert'));
     }
 
     public function update(Request $request,$id){
@@ -118,8 +116,10 @@ class TeamExpertController extends Controller
         }
         $expert->update();
         toast('انجام شد','success');
-        return redirect()->route('admin.teams.experts.index');
+        return redirect()->route('admin.experts.index');
     }
+
+
 
 
     public function delete($id){
@@ -128,6 +128,4 @@ class TeamExpertController extends Controller
         toast('انجام شد','success');
         return redirect()->back();
     }
-
-
 }

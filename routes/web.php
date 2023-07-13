@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\ChallengeController as AdminChallengeController;
+use App\Http\Controllers\Admin\ExpertController;
 use App\Http\Controllers\Admin\notificationController as AdminNotificationController;
 use App\Http\Controllers\Admin\TeamController as AdminTeamController;
 use App\Http\Controllers\Admin\TeamExpertController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\UserExpertController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\Auth\UserEmailVerifyController;
@@ -91,22 +93,36 @@ Route::prefix('/panel')->middleware(['auth','register.email.verify','user.comple
 
 Route::prefix('/admin')->middleware(['auth','admin'])->group(function(){
     Route::get('/',[AdminController::class,'index'])->name('admin.index');
+
     Route::prefix('/users')->group(function(){
         Route::get('/',[UserController::class,'index'])->name('admin.users.index');
         Route::delete('/delete/{code}',[UserController::class,'delete'])->name('admin.users.delete');
     });
+
     Route::prefix('/teams')->group(function(){
         Route::get('/',[AdminTeamController::class,'index'])->name('admin.teams.index');
         Route::delete('/delete/{id}',[AdminTeamController::class,'delete'])->name('admin.teams.delete');
-        Route::prefix('/experts')->group(function(){
-            Route::get('/',[TeamExpertController::class,'index'])->name('admin.teams.experts.index');
-            Route::get('/create',[TeamExpertController::class,'create'])->name('admin.teams.experts.create');
-            Route::get('/edit/{id}',[TeamExpertController::class,'edit'])->name('admin.teams.experts.edit');
-            Route::put('/update/{id}',[TeamExpertController::class,'update'])->name('admin.teams.experts.update');
-            Route::post('/store',[TeamExpertController::class,'store'])->name('admin.teams.experts.store');
-            Route::delete('/delete/{id}',[TeamExpertController::class,'delete'])->name('admin.teams.experts.delete');
+    });
+
+    Route::prefix('/experts')->group(function(){
+        Route::get('/',[ExpertController::class,'index'])->name('admin.experts.index');
+        Route::get('/create',[ExpertController::class,'create'])->name('admin.experts.create');
+        Route::get('/edit/{id}',[ExpertController::class,'edit'])->name('admin.experts.edit');
+        Route::put('/update/{id}',[ExpertController::class,'update'])->name('admin.experts.update');
+        Route::post('/store',[ExpertController::class,'store'])->name('admin.experts.store');
+        Route::delete('/delete/{id}',[ExpertController::class,'delete'])->name('admin.experts.delete');
+
+        Route::prefix('/users')->group(function(){
+            Route::get('/',[UserExpertController::class,'index'])->name('admin.experts.users.index');
+            Route::get('upgrade/{id}',[UserExpertController::class,'upgrade'])->name('admin.experts.users.upgrade');
+            Route::get('downgrade/{id}',[UserExpertController::class,'downgrade'])->name('admin.experts.users.downgrade');
+            Route::get('delete/{id}',[UserExpertController::class,'delete'])->name('admin.experts.users.delete');
+
+
         });
     });
+
+
 
     Route::prefix('/challenge')->group(function(){
         Route::get('/',[AdminChallengeController::class,'index'])->name('admin.challenge.index');

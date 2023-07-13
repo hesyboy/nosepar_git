@@ -7,7 +7,7 @@
                 <i class="fi fi-rr-bars-sort flex text-2xl" x-show="!menu"></i>
             </span>
             <h2 class="font-bold text-3xl text-white">
-                AICrowd
+                No Separ
             </h2>
         </div>
     </div>
@@ -74,10 +74,26 @@
                 <div class="px-4 py-2" x-show="menudropdown" :class="menu ? '' : 'absolute right-16 top-0 w-[200px] bg-slate-900 shadow-md rounded-md' ">
                     <ul>
                         <li>
-                            <a href="{{ route('admin.teams.experts.index') }}" class="flex text-sm items-center gap-3 p-2 rounded-md hover:bg-slate-900" >
+                            <a href="{{ route('admin.experts.index') }}" class="flex text-sm items-center gap-3 p-2 rounded-md hover:bg-slate-900" >
                                 <i class="flex text-2xl fi fi-rr-bullet"></i>
                                 <span >
                                     لیست تخصص ها
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.experts.users.index') }}" class="flex text-sm items-center gap-3 p-2 rounded-md hover:bg-slate-900" >
+                                <i class="flex text-2xl fi fi-rr-bullet"></i>
+                                <span >
+                                    لیست تخصص های کاربران
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.experts.users.index') }}" class="flex text-sm items-center gap-3 p-2 rounded-md hover:bg-slate-900" >
+                                <i class="flex text-2xl fi fi-rr-bullet"></i>
+                                <span >
+                                    لیست تخصص های تیم ها
                                 </span>
                             </a>
                         </li>
