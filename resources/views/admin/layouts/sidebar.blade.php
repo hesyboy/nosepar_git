@@ -90,7 +90,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.experts.users.index') }}" class="flex text-sm items-center gap-3 p-2 rounded-md hover:bg-slate-900" >
+                            <a href="{{ route('admin.experts.teams.index') }}" class="flex text-sm items-center gap-3 p-2 rounded-md hover:bg-slate-900" >
                                 <i class="flex text-2xl fi fi-rr-bullet"></i>
                                 <span >
                                     لیست تخصص های تیم ها

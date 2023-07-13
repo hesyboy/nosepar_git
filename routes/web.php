@@ -117,8 +117,13 @@ Route::prefix('/admin')->middleware(['auth','admin'])->group(function(){
             Route::get('upgrade/{id}',[UserExpertController::class,'upgrade'])->name('admin.experts.users.upgrade');
             Route::get('downgrade/{id}',[UserExpertController::class,'downgrade'])->name('admin.experts.users.downgrade');
             Route::get('delete/{id}',[UserExpertController::class,'delete'])->name('admin.experts.users.delete');
+        });
 
-
+        Route::prefix('/teams')->group(function(){
+            Route::get('/',[TeamExpertController::class,'index'])->name('admin.experts.teams.index');
+            Route::get('upgrade/{id}',[TeamExpertController::class,'upgrade'])->name('admin.experts.teams.upgrade');
+            Route::get('downgrade/{id}',[TeamExpertController::class,'downgrade'])->name('admin.experts.teams.downgrade');
+            Route::get('delete/{id}',[TeamExpertController::class,'delete'])->name('admin.experts.teams.delete');
         });
     });
 
