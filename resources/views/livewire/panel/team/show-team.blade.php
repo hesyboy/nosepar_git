@@ -64,15 +64,21 @@
 
                     <div>
                         <div class="flex justify-start gap-5 px-2">
-                            <a href="http://{{$team->kaggle}}">
-                                <img src="{{asset('assets/images/telegram-blue.png')}}" alt="" class="w-7 h-7">
-                            </a>
-                            <a href="http://{{$team->linkedin}}">
-                                <img src="{{asset('assets/images/linkdin-blue.png')}}" alt="" class="w-7 h-7">
-                            </a>
-                            <a href="http://{{$team->github}}">
-                                <img src="{{asset('assets/images/github-blue.png')}}" alt="" class="w-7 h-7">
-                            </a>
+                            @if ($team->kaggle)
+                                <a href="http://{{$team->kaggle}}">
+                                    <img src="{{asset('assets/images/telegram-blue.png')}}" alt="" class="w-7 h-7">
+                                </a>
+                            @endif
+                            @if ($team->linkedin)
+                                <a href="http://{{$team->linkedin}}">
+                                    <img src="{{asset('assets/images/linkdin-blue.png')}}" alt="" class="w-7 h-7">
+                                </a>
+                            @endif
+                            @if ($team->github)
+                                <a href="http://{{$team->github}}">
+                                    <img src="{{asset('assets/images/github-blue.png')}}" alt="" class="w-7 h-7">
+                                </a>
+                            @endif
                         </div>
                     </div>
                     <div class="">
